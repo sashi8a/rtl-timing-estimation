@@ -1,0 +1,7 @@
+[project]
+name = "rtl-timing-estimation"
+version = "0.0.0"
+description = "Research on register-level RTL timing estimation using open-source tools"
+readme = "README.md"
+# Python version, dependencies, and build configuration will be chosen
+# when the first executable pipeline stage is implemented.

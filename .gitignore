@@ -1,0 +1,38 @@
+# Python and environments
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Local settings and credentials
+.DS_Store
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+
+# Generated data and experiment artifacts
+/data/*
+!/data/README.md
+!/data/manifests/
+/runs/*
+!/runs/README.md
+/output/
+/tmp/
+*.log
+
+# External checkouts are managed separately
+/third_party/*
+!/third_party/README.md
