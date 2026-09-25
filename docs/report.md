@@ -141,6 +141,40 @@ and [execution verification](results/task3_followup_execution.json) are publishe
 all checkpoints, predictions and 600 neural curve epochs are saved on the server
 and in a hash-verified local backup.
 
+### Exploratory family cross-validation and context ablation
+
+The approved four-fold study completed all 40 learned runs and 7,200 neural
+epochs across 17 development designs (eight families, 1,053 register bits).
+AES and UART were excluded from every new fold. Each fold refitted preprocessing
+using training families only. N0, N1, and N1-NoContext used paired seeds and
+fixed epoch-200 evaluation; all final models were frozen before evaluation.
+The ablation zeros retained normalized global design quantities while preserving
+path/cone features and identical input dimensions and initialization.
+
+| Model | Macro-design MAE (ns) | Pooled MAE (ns) |
+|---|---:|---:|
+| median | 0.311723 | 0.495680 |
+| SOG | 0.175497 | 0.270107 |
+| T1 | 0.121225 | 0.264413 |
+| N0 | 0.154636 | 0.406342 |
+| N1 | 0.174866 | 0.506248 |
+| N1-NoContext | 0.134506 | 0.397097 |
+
+Neural entries average three separately scored seeds. Primary MAE averages over
+all 17 out-of-fold designs, not equally over folds. These primary and pooled
+metrics weight the dataset differently; both are reported. Families are the
+relevant generalization units, folds share training data, and this exploratory
+study does not restore an untouched test set.
+
+Execution had zero failures or restarts. The complete 331-file package was synced
+locally and hash-verified, including all checkpoints, training curves, batch
+losses, and 12,636 unique model/seed/register predictions. The
+[summary](results/task3_generalization_summary.md),
+[full metrics](results/task3_generalization_metrics.json),
+[execution audit](results/task3_generalization_execution.json), and
+[runbook](task3-generalization-runbook.md) document the outcome. Task 4 interpretation
+is reserved for the subsequent reflection discussion.
+
 ## Task 4: Reflections — ongoing
 
 The sequential [decision log](decisions.md) records choices, rejected alternatives, observed failures, and verification. Future work includes stronger equivalence coverage, broader independent design families, sensitivity to constraints and sampling, physical timing labels, and commercial-tool comparisons if access becomes available. These are proposals, not completed experiments.

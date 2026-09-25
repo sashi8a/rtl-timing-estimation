@@ -1,0 +1,48 @@
+{
+  "coverage": {
+    "designs": 17,
+    "families": 8,
+    "learned_runs": 40,
+    "neural_epochs": 7200,
+    "prediction_rows": 12636,
+    "register_bits": 1053,
+    "signature": "9cc407f8d8984d423756619ea80a2efb46a52c3f29f3d8b5e4da3d9d52eeb687"
+  },
+  "disconnect_reconnect_verified": true,
+  "failure_records": 0,
+  "linger": "Linger=yes",
+  "local_verification": {
+    "backup": "runs/task3-generalization-20260925-v1",
+    "independent_macro_design_aggregation_check_passed": true,
+    "independent_prediction_coverage_check_passed": true,
+    "original_files_hash_verified_unchanged": 494,
+    "package_files_hash_verified": 331,
+    "package_manifest_sha256": "fde4f52f018b3fb3a972af36f520b881b0345629dd50f135e5bf8679c16318d1"
+  },
+  "owner_only_outputs": true,
+  "preflight": {
+    "cpu_gpu_exact_checkpoint_recovery_passed": true,
+    "fold2_exact_original_training_array_match": true,
+    "full_200_epoch_interruption_recovery_passed": true,
+    "raw_input_hashes_verified": 144220,
+    "real_data_gpu_epoch_passed": true
+  },
+  "readable_checkpoint_verified_at_total_epochs": 757,
+  "run_signature": "9cc407f8d8984d423756619ea80a2efb46a52c3f29f3d8b5e4da3d9d52eeb687",
+  "service": {
+    "ActiveState": "active",
+    "ExecMainStatus": "0",
+    "NRestarts": "0",
+    "SubState": "exited",
+    "UnitFileState": "enabled"
+  },
+  "source_revision": {
+    "repository": "https://github.com/sashi8a/rtl-timing-estimation",
+    "revision": "2c9df0b93a7f45c2a38f457a4ac05a2f01a62c84"
+  },
+  "tests": {
+    "generalization": 9,
+    "original_modeling_and_followup": 23,
+    "task2_pipeline": 20
+  }
+}
