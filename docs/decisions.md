@@ -212,3 +212,13 @@ Preserve these negative/mixed observations and their exploratory evaluation stat
 do not tune further against this test set or select a favorable seed. The final
 export emitted a pandas future deprecation warning for nullable-column concatenation;
 coverage, finite scored predictions, unique identities and sealed outputs passed.
+
+## 2026-09-25 — Exploratory family cross-validation and global-context ablation
+
+The approved follow-up evaluates generalization across the eight original development families, excluding AES and UART entirely from new model inputs and predictions. We freeze four pairs of evaluation families (JPEG/PWM256; CIC5/SPI; Chameleon/CRC32; Ethernet/GCD) before fitting. Each fold trains on the other six families. This extends evidence across families without claiming to restore an untouched test set after earlier test inspection.
+
+We use epoch 200 for every neural model, with no inner validation or checkpoint selection. This keeps all 40 learned runs controlled and avoids adding a tuning loop to a small family-level dataset. T1 is refitted with balanced weights; N0/N1/N1-NoContext use paired seeds and identical batch ordering. Fold-specific preprocessing is fitted only on training families. Original four-view path samples and empty-path conventions are preserved.
+
+The ablation zeros only retained, normalized global design features inside the forward pass. Qualified feature names distinguish path operator counts from global counts, preserving path/cone information and identical network dimensions/initial weights. Remaining features may still identify designs indirectly; this is a test of explicit context features, not an identity-free representation.
+
+Primary scores are computed over all 17 out-of-fold designs per seed, not averaged equally across folds of different sizes. Descriptive target-derived categories are evaluation-only. The independent server service checkpoints every epoch, verifies provenance before resuming, and freezes all final models before evaluation. See `docs/task3-generalization-runbook.md` for the fixed protocol, recovery policy, and package verification commands. No Task 2 artifacts, original experiment modules, or lockfiles are changed.
