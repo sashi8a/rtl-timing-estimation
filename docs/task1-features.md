@@ -38,7 +38,7 @@ For critical paths, a single-clock flow with uniform launch reference is assumed
 
 `design_features.parquet`: structural design counts and operator-type counts. `summary.json`: design size and extraction coverage. `endpoints.json`: graph identities and topology candidates. Raw synthesis/timing logs and path reports are retained.
 
-A null alias or absent timed path is explicit. No timing labels are read by this pipeline. Target labels will be joined separately in Task 2.
+A null alias or absent timed path is explicit. No timing labels are read by this pipeline. Target labels are joined separately in Task 2.
 
 ## Collection constraints
 
@@ -53,3 +53,7 @@ Formal checks compare mapped BOG behavior with Yosys's pre-mapping elaboration. 
 The implementation must verify actual report units and endpoint coverage before declaring a dataset complete. Dataset-wide checks are recorded separately from the GCD walkthrough in `docs/results/task1_validation.json`.
 
 Design net count uses distinct nonconstant Yosys bit-net identities, not declared RTL bus count. Sampled routes duplicating an already retained route are removed and counted. Startpoint type distinguishes primary-input and register-origin paths.
+
+## Task 2 reset-cell library variant
+
+The released collection uses the explicit `reset_v1` library variant. It adds Nangate45 `DFFR_X1` and `DFFS_X1` to each original restricted library, leaving every existing cell and combinational vocabulary unchanged. This is a documented deviation from the upstream library files, not an additional graph representation or target feature. The original libraries remain available as `upstream`. All 19 designs are regenerated under one variant, avoiding mixed library conditions. The original clock-aware mapping proof and reset assumptions are unchanged. See the [adoption evidence](results/reset_repair_experiment.json) and [cell-content checks](results/reset_library_validation.json).

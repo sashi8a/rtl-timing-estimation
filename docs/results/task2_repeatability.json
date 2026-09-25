@@ -1,0 +1,101 @@
+{
+  "reference_archive": "data/archive/20260925T035331Z-d071168e",
+  "comparison": "Numerical feature, label, and join tables after the environment-provenance refresh; provenance JSON is expected to change.",
+  "designs": [
+    {
+      "design": "gcd",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "timer32",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "pwm32",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "wdt32",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "eth_crc",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "eth_random",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "eth_txstatem",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "eth_txcounters",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "eth_rxcounters",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "eth_rxaddrcheck",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "div_su",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "jpeg_rle1",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "jpeg_rzs",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "uart",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "spi",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "aes_key_expand",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "pwm256",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "crc32",
+      "tables_compared": 14,
+      "byte_identical": true
+    },
+    {
+      "design": "cic5",
+      "tables_compared": 14,
+      "byte_identical": true
+    }
+  ]
+}

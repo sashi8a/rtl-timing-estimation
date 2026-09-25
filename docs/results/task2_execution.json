@@ -1,0 +1,103 @@
+{
+  "work_started_utc": "2026-09-25T03:21:45+00:00",
+  "validation_completed_utc": "2026-09-25T04:12:12.164527+00:00",
+  "reset_gate_passed_before_utc": "2026-09-25T03:26:45+00:00",
+  "reset_gate_checks_passed": 12,
+  "upstream_library_hashes_unchanged": 5,
+  "unit_tests_passed_local_and_server": 20,
+  "lint": "passed on local and server",
+  "collection_runs": [
+    {
+      "run_id": "20260925T032645Z-1617b16d",
+      "requested_designs": [
+        "gcd",
+        "timer32",
+        "pwm32",
+        "wdt32",
+        "eth_crc",
+        "eth_random",
+        "eth_txstatem",
+        "eth_txcounters",
+        "eth_rxcounters",
+        "eth_rxaddrcheck",
+        "div_su",
+        "jpeg_rle1",
+        "jpeg_rzs",
+        "uart",
+        "spi",
+        "aes_key_expand",
+        "pwm256",
+        "crc32",
+        "cic5"
+      ],
+      "statuses": {
+        "completed": 95
+      },
+      "finished_utc": "2026-09-25T03:42:28.956132+00:00"
+    },
+    {
+      "run_id": "20260925T034534Z-764d7539",
+      "requested_designs": [
+        "gcd"
+      ],
+      "statuses": {
+        "reused": 5
+      },
+      "finished_utc": "2026-09-25T03:45:40.442240+00:00"
+    },
+    {
+      "run_id": "20260925T035331Z-d071168e",
+      "requested_designs": [
+        "gcd",
+        "timer32",
+        "pwm32",
+        "wdt32",
+        "eth_crc",
+        "eth_random",
+        "eth_txstatem",
+        "eth_txcounters",
+        "eth_rxcounters",
+        "eth_rxaddrcheck",
+        "div_su",
+        "jpeg_rle1",
+        "jpeg_rzs",
+        "uart",
+        "spi",
+        "aes_key_expand",
+        "pwm256",
+        "crc32",
+        "cic5"
+      ],
+      "statuses": {
+        "completed": 95
+      },
+      "finished_utc": "2026-09-25T04:09:13.905997+00:00"
+    },
+    {
+      "run_id": "20260925T040310Z-8e3b508f",
+      "requested_designs": [
+        "gcd"
+      ],
+      "statuses": {
+        "reused": 5
+      },
+      "finished_utc": "2026-09-25T04:03:16.279886+00:00"
+    }
+  ],
+  "pilot_label_tables_byte_identical": [
+    "gcd",
+    "timer32"
+  ],
+  "feature_mapping_checks_passed": 76,
+  "target_mapping_checks_passed": 19,
+  "eligible_register_bits": 1304,
+  "eligible_designs": 19,
+  "eligible_families": 10,
+  "scope": "No model training, physical-design timing, or added designs",
+  "original_deadline_utc": "2026-09-25T04:21:45+00:00",
+  "deadline_lifted_by_user": true,
+  "deadline_lift_acknowledged_before_utc": "2026-09-25T04:09:48+00:00",
+  "first_pass_validation_completed_utc": "2026-09-25T03:46:29.189971+00:00",
+  "environment_provenance": "uv.lock, pyproject.toml, .python-version, actual Python and numpy/pandas/pyarrow/networkx versions; fresh generation, no retrospective provenance fill",
+  "environment_refresh_run": "20260925T035331Z-d071168e"
+}

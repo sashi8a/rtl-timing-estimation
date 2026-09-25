@@ -1,0 +1,79 @@
+{
+  "variant": "reset_v1",
+  "adopt": true,
+  "proof_method": "unchanged clk2fflogic/equiv_simple/equiv_induct -seq 4",
+  "results": [
+    {
+      "design": "timer32",
+      "representation": "sog",
+      "status": "passed",
+      "timed_endpoints": 65
+    },
+    {
+      "design": "timer32",
+      "representation": "aig",
+      "status": "passed",
+      "timed_endpoints": 65
+    },
+    {
+      "design": "timer32",
+      "representation": "aimg",
+      "status": "passed",
+      "timed_endpoints": 65
+    },
+    {
+      "design": "timer32",
+      "representation": "xag",
+      "status": "passed",
+      "timed_endpoints": 65
+    },
+    {
+      "design": "pwm256",
+      "representation": "sog",
+      "status": "passed",
+      "timed_endpoints": 9
+    },
+    {
+      "design": "pwm256",
+      "representation": "aig",
+      "status": "passed",
+      "timed_endpoints": 9
+    },
+    {
+      "design": "pwm256",
+      "representation": "aimg",
+      "status": "passed",
+      "timed_endpoints": 9
+    },
+    {
+      "design": "pwm256",
+      "representation": "xag",
+      "status": "passed",
+      "timed_endpoints": 9
+    },
+    {
+      "design": "gcd",
+      "representation": "sog",
+      "status": "passed",
+      "timed_endpoints": 34
+    },
+    {
+      "design": "gcd",
+      "representation": "aig",
+      "status": "passed",
+      "timed_endpoints": 34
+    },
+    {
+      "design": "gcd",
+      "representation": "aimg",
+      "status": "passed",
+      "timed_endpoints": 34
+    },
+    {
+      "design": "gcd",
+      "representation": "xag",
+      "status": "passed",
+      "timed_endpoints": 34
+    }
+  ]
+}

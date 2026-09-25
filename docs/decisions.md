@@ -119,3 +119,27 @@ Record meaningful decisions as they are made. Unresolved choices are not commitm
 **Implementation details that mattered:** The pinned `report_arrival` command does not support `>` redirection like `report_checks`; bracketed log sections are captured instead. Target mapping retains ordinary combinational gates and DFFs and explicitly excludes physical-only, latch, scan, tristate, clock-gating, and multi-output adder cells. Broader gate types are target-circuit metadata, not new BOG features. Twelve unit tests pass.
 
 **Boundary:** This completes the agreed pilot, not collection-wide labeling, commercial-tool validation, or model training.
+
+## 2026-09-25: Bounded reset-cell repair and collection release
+
+**Budget:** Start at 03:21:45 UTC, stop no later than 04:21:45 UTC; reserve at most 20 minutes for proof recovery. The repair gate passed before production regeneration began at 03:26:45 UTC. The collection command received a 40-minute generation deadline, leaving time for validation and packaging.
+
+**Experiment:** Preserve the upstream libraries and create `reset_v1`, adding only the source Nangate45 `DFFR_X1` and `DFFS_X1` cell definitions. TIMER32 and PWM256 pass the original clock-aware mapping check across all four representations, and GCD passes all four regression checks: 12/12. Actual-library comparisons confirm every original cell block and combinational vocabulary is unchanged; the five upstream library hashes also match the pre-repair snapshot.
+
+**Decision:** Adopt `reset_v1` and regenerate all 19 designs' four feature views before producing fresh label joins. Keep the label definition, common constraints, four representations, and proof policy unchanged. The conditional `async2sync` diagnostic remains excluded from the acceptance gate. The experiment supports this mapping change for the tested circuits; it does not establish a general root cause for every earlier proof failure.
+
+**Reproducibility:** Add an explicit library variant, input/output hash-based resumption, design selection, a maximum of four concurrent EDA containers, and deadline controls. Archive replaced directories before generating new artifacts. Missing provenance is a reason to regenerate, not to assume compatibility. Keep failure and timeout statuses separate from unproven checks.
+
+**Release policy:** Recheck both transition arrivals against direct pin queries and reported path-delay sums. Recompute unique alias matches and require all five mapping checks (target plus four BOGs). Export one record per eligible target register bit with family identity, four feature-view references, labels, and provenance. Report excluded, unmatched, ambiguous, untimed, and failed-validation cases explicitly. Successful labels from excluded designs remain inspectable.
+
+**Scope boundary:** No new designs, physical-design timing, or training. The next checkpoint is selecting entire families for train/validation/test, choosing a simple arrival-time baseline, and choosing one focused improvement. New architecture work must not consume the current labeling budget.
+
+**Measured outcome:** All 19 retained designs across 10 families pass release validation, yielding 1,304 unique eligible register bits and 5,216 feature-view matches. All 76 BOG and 19 target mapping checks pass. No missing, ambiguous, untimed, failed, timed-out, or proof-excluded cases remain in the retained collection. The original DCT runtime exclusion remains unchanged. The regenerated feature dataset has 84,154 path rows; these are correlated feature observations, not additional labels. Twenty unit tests pass on both hosts, lint passes, and a repeat GCD collection invocation reuses all five artifacts without new EDA runs. GCD/TIMER32 target-label Parquet files are byte-identical to the original pilot.
+
+**Timing:** Generation completed at 03:42:29 UTC and release validation by 03:46:29 UTC, approximately 25 minutes after the task began. The remaining budget was used for packaging, documentation, and publication. See `docs/results/task2_execution.json`.
+
+**Final review correction:** The first complete release passed timing and proof validation, but its per-artifact cache key did not include the Python environment lockfiles. Before publication, add `uv.lock`, `pyproject.toml`, `.python-version`, the actual Python version, and installed NumPy/pandas/PyArrow/NetworkX versions to each input signature. Regenerate under a 19-minute deadline within the original one-hour budget instead of retrospectively filling missing provenance. Preserve the first-pass code, release, and inventories under `data/archive/20260925T035331Z-d071168e/`. A changed-lockfile test verifies stale reuse is rejected.
+
+**Budget update:** While the final refreshed design was finishing, the user removed the overall cutoff to allow generation, validation, packaging, and publication to complete. The original 04:21:45 UTC cutoff is retained only as historical context in the execution record. No broader modeling or physical-design scope was added.
+
+**Final release:** Environment-aware regeneration and validation completed successfully for all 19 designs and 1,304 eligible register bits. The final validator completed at 04:12:12 UTC. All 266 feature/label/join Parquet tables are byte-identical to the first pass, while their provenance records now bind the environment. The refreshed GCD cache test reused all five artifacts. No stage failed or timed out, and no retained design is excluded.

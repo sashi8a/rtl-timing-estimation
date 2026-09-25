@@ -1,0 +1,67 @@
+{
+  "sog": {
+    "original_cells": [
+      "AND2_X1",
+      "BUF_X1",
+      "DFFRS_X1",
+      "DFF_X1",
+      "INV_X1",
+      "MUX2_X1",
+      "OR2_X1",
+      "XOR2_X1"
+    ],
+    "added_cells": [
+      "DFFR_X1",
+      "DFFS_X1"
+    ],
+    "original_cell_blocks_unchanged": true,
+    "added_blocks_match_source": true
+  },
+  "aig": {
+    "original_cells": [
+      "AND2_X1",
+      "BUF_X1",
+      "DFFRS_X1",
+      "DFF_X1",
+      "INV_X1"
+    ],
+    "added_cells": [
+      "DFFR_X1",
+      "DFFS_X1"
+    ],
+    "original_cell_blocks_unchanged": true,
+    "added_blocks_match_source": true
+  },
+  "aimg": {
+    "original_cells": [
+      "AND2_X1",
+      "BUF_X1",
+      "DFFRS_X1",
+      "DFF_X1",
+      "INV_X1",
+      "MUX2_X1"
+    ],
+    "added_cells": [
+      "DFFR_X1",
+      "DFFS_X1"
+    ],
+    "original_cell_blocks_unchanged": true,
+    "added_blocks_match_source": true
+  },
+  "xag": {
+    "original_cells": [
+      "AND2_X1",
+      "BUF_X1",
+      "DFFRS_X1",
+      "DFF_X1",
+      "INV_X1",
+      "XOR2_X1"
+    ],
+    "added_cells": [
+      "DFFR_X1",
+      "DFFS_X1"
+    ],
+    "original_cell_blocks_unchanged": true,
+    "added_blocks_match_source": true
+  }
+}

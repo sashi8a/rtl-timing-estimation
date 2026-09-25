@@ -23,13 +23,30 @@
     "cic5"
   ],
   "completed_representation_runs": 76,
-  "formally_proven_runs": 40,
-  "unproven_runs": 36,
+  "formally_proven_runs": 76,
+  "unproven_runs": 0,
   "proofs_not_run": 0,
   "prediction_target": "arrival_time",
   "target_labels_generated": true,
   "label_designs_available": [
+    "aes_key_expand",
+    "cic5",
+    "crc32",
+    "div_su",
+    "eth_crc",
+    "eth_random",
+    "eth_rxaddrcheck",
+    "eth_rxcounters",
+    "eth_txcounters",
+    "eth_txstatem",
     "gcd",
-    "timer32"
+    "jpeg_rle1",
+    "jpeg_rzs",
+    "pwm256",
+    "pwm32",
+    "spi",
+    "timer32",
+    "uart",
+    "wdt32"
   ]
 }

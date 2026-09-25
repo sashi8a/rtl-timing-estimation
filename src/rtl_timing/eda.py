@@ -11,9 +11,12 @@ import uuid
 from pathlib import Path
 
 from .graph import load_bog
+from .libraries import bog_library, library_variant
+from .runtime import stage_timeout
 
 
 def container(root: Path, command: str, log: Path):
+    timeout = stage_timeout()
     cfg = json.loads((root / "configs/eda.json").read_text())
     name = "rtl-timing-" + uuid.uuid4().hex[:12]
     argv = cfg["docker_prefix"] + [
@@ -37,7 +40,7 @@ def container(root: Path, command: str, log: Path):
     with log.open("w") as out:
         try:
             subprocess.run(
-                argv, stdout=out, stderr=subprocess.STDOUT, check=True, timeout=600
+                argv, stdout=out, stderr=subprocess.STDOUT, check=True, timeout=timeout
             )
         except (subprocess.TimeoutExpired, KeyboardInterrupt):
             subprocess.run(
@@ -76,7 +79,7 @@ def generate(root: Path, design_id: str, representation: str):
     for marker in ("summary.json", "equivalence.json", "feature_validation.json"):
         (out / marker).unlink(missing_ok=True)
     relative = out.relative_to(root).as_posix()
-    library = f"data/libraries/nangate45_{representation}.lib"
+    library = bog_library(root, representation).relative_to(root).as_posix()
     sources = " ".join(
         f"data/raw/{design_id}/{Path(p).name}" for p in design["source_files"]
     )
@@ -160,6 +163,7 @@ check_setup -verbose
     summary = {**bog.summary(), **validation}
     summary.update(
         design_id=design_id,
+        library_variant=library_variant(root),
         representation=representation,
         duration_seconds=time.monotonic() - started,
         bog_sha256=hashlib.sha256((out / "bog.json").read_bytes()).hexdigest(),
@@ -185,7 +189,7 @@ def verify_equivalence(root: Path, design_id: str, representation: str):
     out = root / "data/processed" / design_id / representation
     top = design["top"]
     return verify_mapped_netlist(
-        root, out, top, f"data/libraries/nangate45_{representation}.lib"
+        root, out, top, bog_library(root, representation).relative_to(root).as_posix()
     )
 
 
@@ -216,8 +220,11 @@ equiv_status -assert
     status = "passed"
     try:
         container(root, f"yosys -s {relative}/equivalence.ys", out / "equivalence.log")
-    except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
-        status = "unproven"
+    except subprocess.TimeoutExpired:
+        status = "timeout"
+    except subprocess.CalledProcessError:
+        log = (out / "equivalence.log").read_text()
+        status = "unproven" if "unproven $equiv cells" in log else "error"
     result = {
         "status": status,
         "scope": "mapped BOG versus premap elaboration; not original RTL frontend equivalence",

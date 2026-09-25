@@ -1,0 +1,1031 @@
+{
+  "library_variant": "reset_v1",
+  "label": "max(rise, fall) D-pin arrival, ns, post-synthesis without wire parasitics",
+  "requested_designs": 19,
+  "validated_designs": 19,
+  "eligible_designs": 19,
+  "eligible_families": 10,
+  "unique_eligible_register_bits": 1304,
+  "registers_sha256": "cf860796313ba4863edd3e9b0fd6ab6f95e1eb3e43d89feeae7a0c3ee62398ab",
+  "families": {
+    "chameleon_peripherals": {
+      "designs": [
+        "timer32",
+        "pwm32",
+        "wdt32"
+      ],
+      "eligible_designs": 3,
+      "eligible_register_bits": 164
+    },
+    "cic5": {
+      "designs": [
+        "cic5"
+      ],
+      "eligible_designs": 1,
+      "eligible_register_bits": 312
+    },
+    "crc32": {
+      "designs": [
+        "crc32"
+      ],
+      "eligible_designs": 1,
+      "eligible_register_bits": 32
+    },
+    "opencores_aes": {
+      "designs": [
+        "aes_key_expand"
+      ],
+      "eligible_designs": 1,
+      "eligible_register_bits": 172
+    },
+    "opencores_ethernet": {
+      "designs": [
+        "eth_crc",
+        "eth_random",
+        "eth_txstatem",
+        "eth_txcounters",
+        "eth_rxcounters",
+        "eth_rxaddrcheck"
+      ],
+      "eligible_designs": 6,
+      "eligible_register_bits": 128
+    },
+    "opencores_jpeg": {
+      "designs": [
+        "div_su",
+        "jpeg_rle1",
+        "jpeg_rzs"
+      ],
+      "eligible_designs": 3,
+      "eligible_register_bits": 349
+    },
+    "orfs_gcd": {
+      "designs": [
+        "gcd"
+      ],
+      "eligible_designs": 1,
+      "eligible_register_bits": 34
+    },
+    "pwm256": {
+      "designs": [
+        "pwm256"
+      ],
+      "eligible_designs": 1,
+      "eligible_register_bits": 9
+    },
+    "spi": {
+      "designs": [
+        "spi"
+      ],
+      "eligible_designs": 1,
+      "eligible_register_bits": 25
+    },
+    "uart": {
+      "designs": [
+        "uart"
+      ],
+      "eligible_designs": 1,
+      "eligible_register_bits": 79
+    }
+  },
+  "designs": [
+    {
+      "design_id": "gcd",
+      "family": "orfs_gcd",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 34,
+      "feature_register_bits": 34,
+      "timed_register_bits": 34,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 34,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 34,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 34,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 34,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 34,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "timer32",
+      "family": "chameleon_peripherals",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 65,
+      "feature_register_bits": 65,
+      "timed_register_bits": 65,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 65,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 65,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 65,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 65,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 65,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "pwm32",
+      "family": "chameleon_peripherals",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 65,
+      "feature_register_bits": 65,
+      "timed_register_bits": 65,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 65,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 65,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 65,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 65,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 65,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "wdt32",
+      "family": "chameleon_peripherals",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 34,
+      "feature_register_bits": 34,
+      "timed_register_bits": 34,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 34,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 34,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 34,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 34,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 34,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "eth_crc",
+      "family": "opencores_ethernet",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 32,
+      "feature_register_bits": 32,
+      "timed_register_bits": 32,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 32,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 32,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 32,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 32,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 32,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "eth_random",
+      "family": "opencores_ethernet",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 20,
+      "feature_register_bits": 20,
+      "timed_register_bits": 20,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 20,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 20,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 20,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 20,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 20,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "eth_txstatem",
+      "family": "opencores_ethernet",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 12,
+      "feature_register_bits": 12,
+      "timed_register_bits": 12,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 12,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 12,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 12,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 12,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 12,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "eth_txcounters",
+      "family": "opencores_ethernet",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 35,
+      "feature_register_bits": 35,
+      "timed_register_bits": 35,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 35,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 35,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 35,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 35,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 35,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "eth_rxcounters",
+      "family": "opencores_ethernet",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 25,
+      "feature_register_bits": 25,
+      "timed_register_bits": 25,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 25,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 25,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 25,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 25,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 25,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "eth_rxaddrcheck",
+      "family": "opencores_ethernet",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 4,
+      "feature_register_bits": 4,
+      "timed_register_bits": 4,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 4,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 4,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 4,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 4,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 4,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "div_su",
+      "family": "opencores_jpeg",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 272,
+      "feature_register_bits": 272,
+      "timed_register_bits": 272,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 272,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 272,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 272,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 272,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 272,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "jpeg_rle1",
+      "family": "opencores_jpeg",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 32,
+      "feature_register_bits": 32,
+      "timed_register_bits": 32,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 32,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 32,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 32,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 32,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 32,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "jpeg_rzs",
+      "family": "opencores_jpeg",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 45,
+      "feature_register_bits": 45,
+      "timed_register_bits": 45,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 45,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 45,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 45,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 45,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 45,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "uart",
+      "family": "uart",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 79,
+      "feature_register_bits": 79,
+      "timed_register_bits": 79,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 79,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 79,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 79,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 79,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 79,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "spi",
+      "family": "spi",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 25,
+      "feature_register_bits": 25,
+      "timed_register_bits": 25,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 25,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 25,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 25,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 25,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 25,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "aes_key_expand",
+      "family": "opencores_aes",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 172,
+      "feature_register_bits": 172,
+      "timed_register_bits": 172,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 172,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 172,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 172,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 172,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 172,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "pwm256",
+      "family": "pwm256",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 9,
+      "feature_register_bits": 9,
+      "timed_register_bits": 9,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 9,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 9,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 9,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 9,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 9,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "crc32",
+      "family": "crc32",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 32,
+      "feature_register_bits": 32,
+      "timed_register_bits": 32,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 32,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 32,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 32,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 32,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 32,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    },
+    {
+      "design_id": "cic5",
+      "family": "cic5",
+      "status": "validated",
+      "proofs": {
+        "target": "passed",
+        "sog": "passed",
+        "aig": "passed",
+        "aimg": "passed",
+        "xag": "passed"
+      },
+      "target_register_bits": 312,
+      "feature_register_bits": 312,
+      "timed_register_bits": 312,
+      "untimed_register_bits": 0,
+      "unmatched_target_register_bits": 0,
+      "feature_mapping": {
+        "sog": {
+          "matched": 312,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aig": {
+          "matched": 312,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "aimg": {
+          "matched": 312,
+          "unmatched": 0,
+          "ambiguous": 0
+        },
+        "xag": {
+          "matched": 312,
+          "unmatched": 0,
+          "ambiguous": 0
+        }
+      },
+      "unmatched_target_register_bits_by_rep": {
+        "sog": 0,
+        "aig": 0,
+        "aimg": 0,
+        "xag": 0
+      },
+      "eligible_register_bits": 312,
+      "excluded_register_bits": 0,
+      "exclusion_reasons": [],
+      "validation": "passed; identities, hashes, constraints, units, rise/fall paths, direct queries, increment sums, joins, proofs"
+    }
+  ],
+  "collection_runs": [
+    "data/collection_runs/labels-20260925T032645Z-1617b16d.json",
+    "data/collection_runs/labels-20260925T034534Z-764d7539.json",
+    "data/collection_runs/labels-20260925T035331Z-d071168e.json",
+    "data/collection_runs/labels-20260925T040310Z-8e3b508f.json"
+  ],
+  "recorded_collection_failures": []
+}

@@ -6,7 +6,9 @@ Research assessment: predict fine-grained register timing from RTL using open-so
 
 Task 1 feature extraction is implemented for **19 designs across 10 families**, with all four BOG representations (76 runs). DCT was deferred because of synthesis runtime; the exclusion is documented. See [the measured inventory](docs/results/task1_inventory.csv), [validation results](docs/results/task1_validation.json), and [working report](docs/report.md).
 
-The two-design Task 2 pilot now has 99 register-bit labels and complete matches to all four BOG views. GCD is training-eligible under the documented proof gate; TIMER32 remains excluded because its BOG mapping proofs are unresolved. No models have been trained. Our prediction objective is arrival-time regression; BOG-derived ranks are input features only. Some mapping-equivalence checks remain unproven and must not be presented as passed.
+Task 2 is complete: **1,304 validated register-bit labels across all 19 designs and 10 families**, with complete matches to all four feature views. All 76 BOG mapping checks and 19 target mapping checks pass under the documented `reset_v1` library variant. No retained designs are excluded. See the [release inventory](docs/results/task2_collection.json), [execution evidence](docs/results/task2_execution.json), and [reproduction commands](docs/task2-runbook.md).
+
+No models have been trained. Our prediction objective is arrival-time regression; BOG-derived ranks are input features only. The labels use post-synthesis timing without extracted wire parasitics. The next checkpoint is the family-based split, a simple baseline, and one focused improvement.
 
 ## Objectives
 
@@ -36,7 +38,7 @@ Notebooks should run top-to-bottom and import reusable logic from `src/rtl_timin
 
 Each experiment should record its configuration, random seed, code revision, tool versions, dataset identity, and split identifiers. Meaningful decisions belong in [the decision log](docs/decisions.md); findings and limitations belong in [the report](docs/report.md).
 
-Generated datasets, model artifacts, and run outputs are excluded from Git by default. Commit small provenance manifests under `data/manifests/` and reproduction instructions. Artifact distribution will be decided after measuring output sizes.
+Generated datasets, model artifacts, and run outputs are excluded from Git by default. Commit small provenance manifests under `data/manifests/` and reproduction instructions. The full current artifact bundle, including raw timing reports, is retained on the compute server as `/home/sashi/task2-complete-artifacts.tar.gz`; all current artifacts are also available in the local workspace. Superseded outputs remain archived on the server.
 
 ## Reproduction
 

@@ -1,4 +1,4 @@
-# Task 2 pilot: label contract
+# Task 2 label contract
 
 ## Target
 
@@ -18,7 +18,7 @@ No delay target is passed to ABC in the pilot. Record this explicitly: this is t
 
 Query each D endpoint and each transition separately, avoiding global top-N report truncation. In this single-clock, common-reference flow, select the greater arrival. Verify direct arrival queries where supported by the pinned OpenSTA version; retain diagnostic differences instead of silently selecting slack as a label. Assert ns/fF units, finite arrivals for timed rows, unique endpoint identities, unambiguous one-to-one alias matches, and raw-report endpoint agreement.
 
-## Pilot acceptance
+## Historical pilot acceptance
 
 Run GCD and TIMER32. Inspect low-, middle-, and high-arrival examples for each design, including source kind, endpoint identity, rise/fall selection, and raw report arithmetic. Label coverage, functional verification status, and training eligibility are separate fields. An unresolved mapping proof is not promoted to a pass by successful STA. No collection-wide label generation or model training is part of this pilot.
 
@@ -35,10 +35,14 @@ Keep every successfully generated label and mapping record for audit. Mark a joi
 
 The existing Yosys `equiv_induct` result is an inductive check after state alignment, not proof of reset-sequence reachability or original-RTL frontend correctness. The pilot policy retains that explicit proof boundary. Diagnostic `async2sync` passes do not change eligibility: they assume clock-synchronized asynchronous signals and negative hold time, and therefore do not settle unrestricted asynchronous behavior.
 
-Representative TIMER32 and PWM256 SOG checks remain unproven after moving clock modeling before matching and after increasing induction depth to 16 with undefined-state modeling. Both pass under `async2sync`. This is evidence that proof results depend on the clock/reset model; it is not a counterexample or a general diagnosis of every unresolved design. TIMER32's broader-library target mapping passes the original clock-aware check, further narrowing the observed issue to the restricted mapping/proof combination.
+With the original upstream libraries, representative TIMER32 and PWM256 SOG checks remained unproven after moving clock modeling before matching and after increasing induction depth to 16 with undefined-state modeling. Both pass under `async2sync`. This is evidence that proof results depend on the clock/reset model; it is not a counterexample or a general diagnosis of every unresolved design. TIMER32's broader-library target mapping passes the original clock-aware check, further narrowing the observed issue to the restricted mapping/proof combination.
 
-Across Task 1, 10 of 19 designs (8 families) pass all four feature mapping checks. The other 9 remain quarantined by this default policy. Target checks are still required for each design before training. For the pilot, GCD contributes 34 eligible register bits; TIMER32's 65 labeled bits remain available for inspection but are excluded from training.
+The original Task 1 mapping passed all four checks for 10 of 19 designs (8 families); the other 9 were quarantined. In the original pilot, GCD contributed 34 eligible bits and TIMER32's 65 labels were excluded. These historical counts are superseded by the current collection inventory after the separately tested `reset_v1` library repair. The inclusion policy itself is unchanged.
 
 References for the diagnostic assumptions:
 - https://yosyshq.readthedocs.io/projects/yosys/en/v0.68/cmd/index_formal.html
 - https://yosyshq.readthedocs.io/projects/yosys/en/0.44/cmd/async2sync.html
+
+## Collection release acceptance
+
+The `reset_v1` adoption gate requires TIMER32, PWM256, and GCD to pass the unchanged clock-aware proof in all four views. Each released register bit additionally needs four distinct uniquely matched feature views, a timed target D pin, matching constraints and artifact provenance, passing target and feature mapping checks, and passing arrival-report validation. Exported records count unique register bits, with design and family identities. Missing, ambiguous, untimed, failed-validation, and proof-excluded records are reported separately and never filled with invented labels. See [the current inventory](results/task2_collection.json).

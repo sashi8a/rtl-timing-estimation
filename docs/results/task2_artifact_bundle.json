@@ -1,0 +1,22 @@
+{
+  "archive": "/home/sashi/task2-complete-artifacts.tar.gz",
+  "sha256": "30016d848573104483630fe411ee2d53f01215a76b9d62399a7316526ac2a634",
+  "bytes": 205502026,
+  "contents": [
+    "data/raw",
+    "data/libraries",
+    "data/processed",
+    "data/labels",
+    "data/releases",
+    "data/collection_runs",
+    "data/experiments/reset_v1",
+    "docs/results"
+  ],
+  "local_transfer": "SHA-256 verified and extracted into the project workspace",
+  "local_snapshot_hashes_verified": 5383,
+  "superseded_artifacts": [
+    "/home/sashi/rtl-timing-estimation/data/archive/20260925T032645Z-1617b16d/",
+    "/home/sashi/rtl-timing-estimation/data/archive/20260925T035331Z-d071168e/"
+  ],
+  "note": "Use with the published repository code. This external bundle descriptor is excluded from the archive to avoid a circular checksum; final prose documentation is maintained in Git."
+}

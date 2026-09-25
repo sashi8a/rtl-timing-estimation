@@ -37,7 +37,9 @@ Repeat `generate`, `verify-equivalence`, and validation for `aig`, `aimg`, and `
 The formal command records `passed` or `unproven` in `equivalence.json`; inspect that
 file rather than treating command completion as proof.
 
-## Collection
+## Historical feature-only collection
+
+For the current validated dataset, use the [Task 2 collection runner](task2-runbook.md), which adds strict hash-based resumption, variant selection, labels, and a shared deadline. The older feature-only commands below do not seal Task 2 provenance.
 
 ```bash
 uv run python scripts/run_collection.py --workers 2
@@ -97,6 +99,8 @@ uv run python scripts/snapshot_provenance.py
 
 The hash snapshot identifies final inputs and outputs; it is not a historical execution trace. Raw reports permit extraction to be rerun without repeating synthesis.
 
-## Current artifact locations
+## Historical artifact locations
+
+The complete current Task 2 artifacts, including raw reports for every design, are now available both locally and on the server. See the [current bundle details](task2-runbook.md#current-artifact-bundle). The following describes the earlier transfers.
 
 The complete raw reports remain on the compute server under `/home/sashi/rtl-timing-estimation/data/processed/`. The local workspace contains the source files, graphs, feature tables, scripts, and logs; only the GCD pilot's raw reports were transferred locally. Run full reextraction on the server or regenerate reports locally with the pinned container. The initial compact collection is packaged on the server in `/home/sashi/task1-artifacts.tar.gz`. The newer `/home/sashi/task2-pilot-artifacts.tar.gz` contains the regenerated GCD/TIMER32 feature artifacts and the label pilot; apply it after the initial archive to obtain current pilot data.

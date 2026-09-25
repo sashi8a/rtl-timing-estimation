@@ -17,6 +17,7 @@ dist/
 
 # Local settings and credentials
 .DS_Store
+._*
 .env
 .env.*
 !.env.example
