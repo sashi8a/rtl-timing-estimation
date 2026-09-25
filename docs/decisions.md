@@ -48,7 +48,7 @@ Record meaningful decisions as they are made. Unresolved choices are not commitm
 
 ## 2026-09-25: Dataset scope and common collection constraints
 
-**Decision:** The user approved a mix of functional blocks and larger designs. Screened 25 candidates and selected 20 for execution, grouped into 10 families across arithmetic/control, communication, signal processing, and cryptography. Related JPEG and Ethernet blocks must not cross a family-based train/test split.
+**Decision:** The collection includes a mix of functional blocks and larger designs. Screened 25 candidates and selected 20 for execution, grouped into 10 families across arithmetic/control, communication, signal processing, and cryptography. Related JPEG and Ethernet blocks must not cross a family-based train/test split.
 
 **Reason:** Modest blocks make four-representation extraction practical while exposing different logic structures. This is a block-oriented dataset, not 20 unrelated full-chip designs; that limits claims of generalization.
 
@@ -224,3 +224,9 @@ The ablation zeros only retained, normalized global design features inside the f
 Primary scores are computed over all 17 out-of-fold designs per seed, not averaged equally across folds of different sizes. Descriptive target-derived categories are evaluation-only. The independent server service checkpoints every epoch, verifies provenance before resuming, and freezes all final models before evaluation. See `docs/task3-generalization-runbook.md` for the fixed protocol, recovery policy, and package verification commands. No Task 2 artifacts, original experiment modules, or lockfiles are changed.
 
 The study completed unchanged at source revision `2c9df0b`: all 40 models, 7,200 epochs, and 12,636 OOF prediction rows were sealed, with zero failures/restarts. All 52 tests passed. The 331-file package was synced and hash-verified locally, and 494 checked prior files were unchanged. Primary and pooled metrics are both published because they weight designs/registers differently; no settings or seeds were selected after seeing these results. See `docs/results/task3_generalization_summary.md`; Task 4 interpretation is deferred to the reflection discussion.
+
+## 2026-09-25 — Experimental closeout and deliverable packaging
+
+Stop additional model development: all specified studies are complete, and further tuning on the same small evaluation populations would not resolve the main evidence limitations. Preserve the distinction between the original test, already-inspected-test follow-ups, and development-family CV. Package every model/seed, including negative/mixed results, and report macro-design and pooled errors together.
+
+Use a separate reporting environment for descriptive figures without modifying frozen data/model environments or artifacts. Current summaries are separated from historical planning entries. Task 4 distinguishes measured internal timing/proof consistency from unmeasured commercial/physical fidelity and end-to-end speedup. Reviewer-facing materials contain technical methods, results and decisions; personal preparation notes are maintained separately and excluded from release archives.

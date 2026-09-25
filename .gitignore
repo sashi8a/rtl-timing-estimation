@@ -37,3 +37,6 @@ dist/
 # External checkouts are managed separately
 /third_party/*
 !/third_party/README.md
+
+# Personal study material: never commit or include in reviewer bundles
+/personal/

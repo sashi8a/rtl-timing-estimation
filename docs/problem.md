@@ -19,9 +19,9 @@ Estimate timing for individual RTL registers. Build a dataset of approximately 2
 
 RTL feeds two branches: a BOG branch produces model features, while a synthesized-circuit branch produces timing labels. Register endpoints must be matched between branches to form supervised examples.
 
-## Decisions still open
+## Finalized scope
 
-Task 1 feature definitions, BOG libraries, collection constraints, and design sources are recorded in the feature contract and manifests. Arrival-time regression is the agreed objective. The Task 2 pilot now fixes the target as maximum D-pin data arrival after broader-library synthesis, under matching constraints and without extracted wire parasitics. Still open: resolving quarantined BOG proofs and the full labeling rollout; Task 3 baseline/model choice, family split membership, and metrics.
+Tasks 1–3 are complete: 19 designs / ten families, four feature views, 1,304 validated bit-level labels, an original family-separated experiment, and two exploratory follow-up studies. The label contract, constraints, reset-cell repair, eligibility policy and family splits are frozen and documented. No unresolved retained mapping proofs or unfinished experiments remain. See the [delivery index](delivery-index.md), [report](report.md) and [Task 4 reflection](task4-reflections.md). Further work is prioritized as untested future research, not silently included in this assessment.
 
 ## Verification principles
 

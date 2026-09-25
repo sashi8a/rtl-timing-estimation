@@ -4,11 +4,13 @@ Research assessment: predict fine-grained register timing from RTL using open-so
 
 ## Status
 
-Task 1 feature extraction is implemented for **19 designs across 10 families**, with all four BOG representations (76 runs). DCT was deferred because of synthesis runtime; the exclusion is documented. See [the measured inventory](docs/results/task1_inventory.csv), [validation results](docs/results/task1_validation.json), and [working report](docs/report.md).
+Task 1 feature extraction is implemented for **19 designs across 10 families**, with all four BOG representations (76 runs). DCT was deferred because of synthesis runtime; the exclusion is documented. See [the measured inventory](docs/results/task1_inventory.csv), [validation results](docs/results/task1_validation.json), and [research report](docs/report.md).
 
 Task 2 is complete: **1,304 validated register-bit labels across all 19 designs and 10 families**, with complete matches to all four feature views. All 76 BOG mapping checks and 19 target mapping checks pass under the documented `reset_v1` library variant. No retained designs are excluded. See the [release inventory](docs/results/task2_collection.json), [execution evidence](docs/results/task2_execution.json), and [reproduction commands](docs/task2-runbook.md).
 
-No models have been trained. Our prediction objective is arrival-time regression; BOG-derived ranks are input features only. The labels use post-synthesis timing without extracted wire parasitics. The next checkpoint is the family-based split, a simple baseline, and one focused improvement.
+Tasks 3 and 4 are packaged: **55 fitted runs across three studies, 9,600 neural epochs**, and an evidence-based reflection. All experiments completed; saved results and checkpoints are available on the server and locally. Original AES/UART test results and exploratory follow-ups/CV are reported separately. Our objective is arrival-time regression; BOG-derived ranks are input features only. These are post-synthesis labels without extracted wire parasitics.
+
+**Start with the [delivery index](docs/delivery-index.md), [report](docs/report.md), [Task 4 reflections](docs/task4-reflections.md), and [implementation overview](docs/implementation.md).** The [all-study ledger](docs/results/experiment-ledger.csv) retains every reported model/seed result. All planned experiments are complete; the report separates original held-out evaluation from exploratory studies.
 
 ## Objectives
 
@@ -23,8 +25,11 @@ No models have been trained. Our prediction objective is arrival-time regression
 | Path | Purpose |
 | --- | --- |
 | `configs/` | Design manifests and experiment settings |
-| `src/rtl_timing/` | Reusable pipeline and model code |
-| `scripts/` | Data generation, training, and evaluation entry points |
+| `src/rtl_timing/` | Data-generation and validation pipeline |
+| `scripts/` | Data generation, extraction and validation entry points |
+| `modeling/` | Frozen original modeling code and separate uv environment |
+| `experiments/` | Isolated follow-up and cross-validation implementations |
+| `reporting/` | Isolated plotting environment and review-package builder |
 | `notebooks/` | Small experiments and explanatory walkthroughs |
 | `tests/` | Mapping, extraction, and evaluation checks |
 | `docs/` | Problem formulation, decision log, and report |
@@ -34,7 +39,7 @@ No models have been trained. Our prediction objective is arrival-time regression
 
 ## Workflow and reproducibility
 
-Notebooks should run top-to-bottom and import reusable logic from `src/rtl_timing/`. Scripts will run the same code for reproducible experiments.
+Pipeline scripts use reusable logic from `src/rtl_timing/`; the GCD notebook explains a small example. Modeling and later studies have isolated entry points and frozen configurations. Reporting reads saved outputs only.
 
 Each experiment should record its configuration, random seed, code revision, tool versions, dataset identity, and split identifiers. Meaningful decisions belong in [the decision log](docs/decisions.md); findings and limitations belong in [the report](docs/report.md).
 

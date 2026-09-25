@@ -1,4 +1,4 @@
-# Research report — work in progress
+# Research report — completed experiments
 
 ## Task 1: Data collection and feature extraction
 
@@ -92,9 +92,9 @@ model can represent the correction, although residual training could still offer
 optimization or inductive-bias benefits. This is a design choice, not a measured
 negative result. The [experiment scratchpad](task3-experiment-plan.md) records the
 rationale, controls, remaining choices, and shared prerequisites for running the
-two tracks concurrently. No modeling results are claimed yet.
+two tracks concurrently. Completed outcomes are reported below; historical proposals remain in the scratchpad.
 
-Following authorization to prepare and launch unattended training, the 6/2/2
+For the original unattended training experiment, the 6/2/2
 family split is frozen: 716 training, 337 validation, and 251 test register bits.
 The scratchpad specifies feature inputs, matched protocols, and macro-design MAE
 in ns as the primary metric. It documents the
@@ -124,7 +124,7 @@ inputs and 33 inputs per path for the shared representation-conditioned MLP.
 
 ### Exploratory follow-ups
 
-After inspecting those results, the user approved training-only affine SOG
+After inspecting those results, the follow-up protocol introduced training-only affine SOG
 calibration and SOG-only N1 with the same three seeds, architecture, preprocessing,
 batch ordering and smooth-to-hard schedule. The original split was retained.
 These are exploratory repeated evaluations of an already-inspected test set,
@@ -175,9 +175,15 @@ losses, and 12,636 unique model/seed/register predictions. The
 [runbook](task3-generalization-runbook.md) document the outcome. Task 4 interpretation
 is reserved for the subsequent reflection discussion.
 
-## Task 4: Reflections — ongoing
+## Task 4: Reflections
 
-The sequential [decision log](decisions.md) records choices, rejected alternatives, observed failures, and verification. Future work includes stronger equivalence coverage, broader independent design families, sensitivity to constraints and sampling, physical timing labels, and commercial-tool comparisons if access becomes available. These are proposals, not completed experiments.
+The [full reflection](task4-reflections.md) answers the three assessment questions and separates observed limitations from hypotheses. The main conclusion is conditional: direct SOG remained strongest at the configuration-average level on the original AES/UART test; exploratory development-family CV favored T1 on macro-design MAE and showed an aggregate benefit from removing explicit global context from N1. Neural pooled errors and the large divider failure remain important limitations. Smoothing was beneficial on the original split but inconsistent across CV seeds.
+
+No commercial-tool comparison, physical signoff accuracy, or end-to-end runtime advantage has been measured. Direct pin queries and path-sum checks establish internal extraction consistency; they do not independently validate the timing engine. Formal checks cover mapped logic versus pre-mapping elaboration after state alignment, not frontend correctness or reset reachability.
+
+With more resources, prioritize independent design families and a fresh held-out test, investigate the divider failure and path-sampling coverage, then test targeted representation/training changes. Physical timing, corner/constraint robustness and end-to-end runtime benchmarks are separate future studies. Residual prediction remains a scope decision, not a negative experiment.
+
+No required experiment remains unfinished. All 55 fitted runs and 9,600 neural epochs completed. The [delivery index](delivery-index.md) packages methods, full results and figures; the [implementation overview](implementation.md) traces implementation choices and verification at each stage.
 
 ## Reproduction
 

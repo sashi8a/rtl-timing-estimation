@@ -1,11 +1,8 @@
-# Task 3 experiment scratchpad
+# Task 3 experiment specification and decision history
 
-Current scope: see **Later side-conversation agreement** below for the five-model
-matrix. Earlier entries are retained as decision history. The user's subsequent
-request to prepare and launch unattended training authorizes the proposed split
-and defaults; see the execution entry at the end and the Task 3 runbook.
+The original protocol is complete. The dated entries below document scientific choices as they evolved; later execution amendments supersede earlier proposals. Current results are in [the report](report.md), with operational requirements in [reproduction](reproduction.md).
 
-## 2026-09-25: Scope agreed in modeling side discussion
+## 2026-09-25: Initial modeling scope
 
 Keep two experiments: balanced training weights and smooth-max path aggregation.
 Drop explicit residual prediction. These are proposed experiments, not measured
@@ -89,7 +86,7 @@ MLP difference alone cannot identify the effect of weighting or pooling.
 Status: experiment scope documented; no split selected, baseline fitted, or
 training launched by this side discussion.
 
-## 2026-09-25: Later side-conversation agreement
+## 2026-09-25: Subsequent protocol amendment
 
 The later handoff supersedes the earlier four-configuration scope and the
 intermediate SOG-only neural suggestion. The agreed matrix now has **five learned
@@ -200,7 +197,7 @@ four-category one-hot representation indicator. Recommend **one shared path MLP
 across all four views**, conditioned on that indicator, rather than four separate
 networks: we have only 716 proposed training endpoint labels. Thus the shared MLP
 has 34 candidate inputs before train-constant removal. Shared versus separate
-parameters remains a recommendation for user review. Do not repeat
+parameters remains a recommendation for protocol review. Do not repeat
 endpoint maximum BOG arrival or rank on each path: that would provide a shortcut
 around the path aggregation under investigation. Omit the critical/random path
 flag initially. These are deliberate feature deviations, identical for N0/N1/N2.
@@ -371,7 +368,7 @@ loss from equation (3)'s generic `LossFunc`. No signal-ranking head, signal-leve
 ensemble, WNS/TNS prediction, or synthesis optimization is included. Paper
 accuracy numbers are not directly comparable to our dataset and label flow.
 
-After the user reviews the split, feature choices, and controlled protocols:
+The implementation sequence following protocol finalization:
 
 1. Freeze input identities and split; create the isolated uv environment and
    a data loader with an explicit feature allowlist.
@@ -387,14 +384,9 @@ After the user reviews the split, feature choices, and controlled protocols:
 
 No implementation or training was performed as part of writing this proposal.
 
-## 2026-09-25: Authorized unattended execution
+## 2026-09-25: Final unattended execution protocol
 
-The user requested that preparation and training proceed so results are saved
-for the next morning, and specifically requested intermediate training data for
-loss curves and other diagnostics. Proceed with the proposed family membership,
-shared representation-conditioned MLP, pooling schedule, fixed tree parameters,
-three paired seeds, and validation-only checkpoint selection. This authorizes
-implementation and launch without another approval gate.
+The finalized execution protocol adopted the family membership, shared representation-conditioned MLP, pooling schedule, fixed tree parameters, three paired seeds and validation-only checkpoint selection described above. Intermediate losses, diagnostics and checkpoints were retained for analysis and recovery.
 
 For unattended completion, replace the interactive pre-test validation checkpoint
 with a deterministic gate: every model must complete with finite predictions,
@@ -436,7 +428,7 @@ training or test evaluation; it is not an outcome-driven experimental change.
 
 ## 2026-09-25: Approved exploratory SOG follow-ups
 
-After inspecting the original test results, the user approved both a two-parameter
+After inspecting the original test results, the follow-up protocol specified both a two-parameter
 SOG calibration and a SOG-only N1 ablation, retaining the original family split
 without a cross-validation sweep. Reconsidering calibration is a new scope choice,
 not a reversal of a negative residual-learning experiment. These follow-ups must

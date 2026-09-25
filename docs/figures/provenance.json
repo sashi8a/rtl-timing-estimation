@@ -1,0 +1,13 @@
+{
+  "input_sha256": {
+    "runs/task3-20260925-v1/results/summary.csv": "3a81130b9c8349f02ba214f4a4a84694f305e2f068482ea68828e18823319c35",
+    "runs/task3-followup-20260925-v1/results/summary.csv": "d61ebdce817e33e1f8139c3848e7de2ca393b63721e31cbc94dd4089a2f37bd7",
+    "runs/task3-generalization-20260925-v1/results/summary.csv": "1eff2b240cda48105b506ad02ecb4747744124f3bb1a1a3f7bd89dd818f1ce95",
+    "docs/results/task3_generalization_per_design.csv": "51a52e9ab42512cabd1a40972c4fbf5cf65f294666e4cc135386093b511d6f4a",
+    "runs/task3-20260925-v1/results/learning_curves.csv": "818314028910edd7f5ada86a8abeb35004e8202d5de89c3a348c76e396a8d479"
+  },
+  "matplotlib": "3.10.6",
+  "pandas": "2.3.3",
+  "source": "reporting/build_figures.py",
+  "note": "Descriptive figures from sealed outputs; no fitting or model selection"
+}
