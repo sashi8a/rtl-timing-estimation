@@ -433,3 +433,22 @@ There are now 18 path quantities, 276 candidate tree inputs, and 35 candidate
 neural inputs before train-constant removal. The frozen manifest records the
 resulting ordered features and affected counts. This correction was made before
 training or test evaluation; it is not an outcome-driven experimental change.
+
+## 2026-09-25: Approved exploratory SOG follow-ups
+
+After inspecting the original test results, the user approved both a two-parameter
+SOG calibration and a SOG-only N1 ablation, retaining the original family split
+without a cross-validation sweep. Reconsidering calibration is a new scope choice,
+not a reversal of a negative residual-learning experiment. These follow-ups must
+be labeled exploratory because the test set has already informed the discussion.
+
+C0 fits a nonnegative slope and unrestricted offset by uniform training-register
+absolute error, using HiGHS dual simplex; predictions are clipped at zero and raw
+values retained. There is no tuning. N1-SOG repeats the original three seeds and
+200-epoch smooth-to-hard schedule, with the original 33-column SOG input slice and
+scalers to preserve exact initial MLP weights and batch ordering. It removes the
+other views and their averaging, rather than changing network size or optimizer.
+All selections freeze before automatic exploratory test evaluation.
+
+The [follow-up runbook](task3-followup-runbook.md) specifies the isolated code,
+server service, checkpoint recovery, output provenance, and saved diagnostics.

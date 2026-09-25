@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "base_signature": "34446edbb170fefecd8fdd6e106ab81b7a56530bace10f8e2d6cb2dffe176ff8",
+  "seeds": [11, 22, 33],
+  "calibration": {"loss": "uniform_register_absolute_error", "solver": "highs-ds", "nonnegative_slope": true, "clip_inference_at_zero": true},
+  "neural": "Original N1 settings, SOG slice only, original 33-column layout and paired initialization",
+  "evaluation": "Exploratory reuse of the previously inspected original test set; no test-driven selection or tuning"
+}

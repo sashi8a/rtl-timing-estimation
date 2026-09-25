@@ -1,0 +1,30 @@
+[Unit]
+Description=RTL timing Task 3 exploratory SOG follow-ups
+After=network.target
+StartLimitIntervalSec=3600
+StartLimitBurst=3
+
+[Service]
+Type=exec
+WorkingDirectory=/home/sashi/rtl-timing-estimation
+ExecStart=/home/sashi/rtl-timing-estimation/modeling/.venv/bin/python -u /home/sashi/rtl-timing-estimation/experiments/task3_followup/follow_run.py --base-run /home/sashi/rtl-timing-estimation/runs/task3-20260925-v1 --run /home/sashi/rtl-timing-estimation/runs/task3-followup-20260925-v1
+Environment=CUDA_VISIBLE_DEVICES=0
+Environment=CUBLAS_WORKSPACE_CONFIG=:4096:8
+Environment=OMP_NUM_THREADS=4
+Environment=OPENBLAS_NUM_THREADS=2
+Environment=MKL_NUM_THREADS=2
+Environment=PYTHONUNBUFFERED=1
+UMask=0077
+NoNewPrivileges=true
+LimitCORE=0
+MemoryMax=16G
+Restart=on-failure
+RestartSec=30
+TimeoutStopSec=60
+KillMode=control-group
+RemainAfterExit=yes
+StandardOutput=append:/home/sashi/rtl-timing-estimation/runs/task3-followup-20260925-v1/supervisor.log
+StandardError=inherit
+
+[Install]
+WantedBy=default.target

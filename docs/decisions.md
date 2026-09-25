@@ -180,3 +180,19 @@ hard-max train/validation metrics, gradients, temperatures, mixing weights,
 pooling gaps, sampled-epoch validation predictions and per-view scores; and all
 candidate plus selected checkpoints. Produce plot-ready CSVs at completion.
 Save all outcomes, including negative or mixed results, for the reflection stage.
+
+## 2026-09-25: Exploratory calibration and representation ablation
+
+The original run completed all 11 learned runs with no service restarts. Direct
+SOG had lower aggregate test MAE than the learned configurations averaged over
+seeds. Smoothing improved all three paired neural seeds, but learned mixing did
+not improve that comparison. These results motivate two user-approved follow-ups:
+training-only affine SOG calibration and SOG-only N1 at the same three seeds.
+
+Keep the original split, scaling, features, optimizer and selection rule. Preserve
+the 33-column layout even though the three unused representation indicators are
+constant, so initial neural weights remain exactly paired. Reuse the original
+batch-order and pooling functions. Do not modify or rerun the original experiments.
+Use separate hashed manifests, outputs and a persistent server service. Save every
+outcome; explicitly label repeated test evaluation exploratory rather than claiming
+a fresh test. No new design collection, label changes, or hyperparameter sweep.
