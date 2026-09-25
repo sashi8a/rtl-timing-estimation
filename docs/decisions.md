@@ -143,3 +143,40 @@ Record meaningful decisions as they are made. Unresolved choices are not commitm
 **Budget update:** While the final refreshed design was finishing, the user removed the overall cutoff to allow generation, validation, packaging, and publication to complete. The original 04:21:45 UTC cutoff is retained only as historical context in the execution record. No broader modeling or physical-design scope was added.
 
 **Final release:** Environment-aware regeneration and validation completed successfully for all 19 designs and 1,304 eligible register bits. The final validator completed at 04:12:12 UTC. All 266 feature/label/join Parquet tables are byte-identical to the first pass, while their provenance records now bind the environment. The refreshed GCD cache test reused all five artifacts. No stage failed or timed out, and no retained design is excluded.
+
+## 2026-09-25: Task 3 unattended execution and diagnostics
+
+**Authorization and scope:** The user requested preparation and unattended
+training with saved results for the next morning, then explicitly requested
+intermediate data for loss curves and other diagnostics. Adopt the proposed
+6/2/2 family split and fixed controls recorded in `task3-experiment-plan.md`.
+Train T0/T1 and three paired seeds of N0/N1/N2; keep median and uncalibrated SOG
+references. Residual learning remains a scope exclusion, not a negative result.
+
+**Reproducibility:** Preserve Task 2 artifacts and root environment. Use a
+separate `modeling/` uv project with its own CUDA-enabled lockfile. Revalidate
+Task 2 read-only using its original environment; freeze source/output hashes,
+split, permitted features and training-only scalers. A persistent non-root
+systemd job runs CPU/GPU queues, writes atomic checkpoints every epoch, records
+failures, and retries only with matching code, data, environment and settings.
+Freeze all validation-selected checkpoints before one common test stage; no
+overnight tuning or test-driven decisions.
+
+**Observed preparation issue:** Four zero-gate primary-input paths have undefined
+fanout/capacitance statistics because their sample sets are empty, across all
+four representations. The loader initially rejected these nulls. Encode only
+this verified empty-set case as zero with an explicit indicator, in every model;
+reject all unexpected missing values. Do not change labels, proof policy, or
+Task 2 artifacts. This is documented before training, not selected from results.
+
+**Checks:** Original 20 tests pass. Fifteen modeling tests cover grouped splits,
+training-only preprocessing, hierarchical weight totals, pooling masks/bias/
+gradients, paired initialization, GPU training, metric aggregation, stale-input
+rejection, curve export, failure recording, and interruption/recovery equivalence.
+All 19 designs pass the original release validator again without rewriting data.
+
+**Diagnostics:** Retain tree-iteration histories; neural epoch and batch losses,
+hard-max train/validation metrics, gradients, temperatures, mixing weights,
+pooling gaps, sampled-epoch validation predictions and per-view scores; and all
+candidate plus selected checkpoints. Produce plot-ready CSVs at completion.
+Save all outcomes, including negative or mixed results, for the reflection stage.

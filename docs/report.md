@@ -80,11 +80,13 @@ The [inventory](results/task2_collection.json) reports every design and explicit
 
 Superseded upstream outputs are retained under the server's `data/archive/20260925T032645Z-1617b16d/`. The first-pass reset-library data, inventories, and exact code are preserved under `data/archive/20260925T035331Z-d071168e/`; original experiment archives and Git history remain available. No previously unproven artifact was relabeled as passed: new mappings were generated and checked. The conditional `async2sync` diagnostic never substitutes for the required proof.
 
-## Task 3: Training and analysis — pending
+## Task 3: Training and analysis — unattended run launched
 
-The modeling discussion selected two controlled experiments: balanced training
-weights for a compact tree model, and smooth-max versus hard-max path aggregation
-for a small MLP, alongside a naive training-median arrival predictor. Explicit
+The modeling discussion selected a tree weighting comparison and two neural
+comparisons: smooth-max versus hard-max path training, then learned versus equal
+representation mixing under smooth-to-hard training. All neural conditions use
+all four BOG views and hard-max path pooling at inference. The resulting five
+learned configurations accompany training-median and direct-SOG references. Explicit
 residual prediction was dropped to limit scope: a sufficiently expressive direct
 model can represent the correction, although residual training could still offer
 optimization or inductive-bias benefits. This is a design choice, not a measured
@@ -92,7 +94,28 @@ negative result. The [experiment scratchpad](task3-experiment-plan.md) records t
 rationale, controls, remaining choices, and shared prerequisites for running the
 two tracks concurrently. No modeling results are claimed yet.
 
-Agree on family-based train/validation/test membership before tuning. Start with a simple arrival-time baseline, then test a motivated modeling change. A full reproduction of RTL-Timer is optional. Choose metrics after inspecting target-label coverage and distribution; report per-design behavior alongside aggregate errors.
+Following authorization to prepare and launch unattended training, the 6/2/2
+family split is frozen: 716 training, 337 validation, and 251 test register bits.
+The scratchpad specifies feature inputs, matched protocols, and macro-design MAE
+in ns as the primary metric. It documents the
+finite-temperature downward bias of normalized log-sum-exp, the distinction
+between family-balanced training and design-macro evaluation, and the limited
+generalization evidence available from two test families. A separate modeling
+uv environment preserves Task 2 environment fingerprints. Fifteen modeling tests
+pass, alongside the original 20 tests and read-only revalidation of all 19
+designs. A persistent non-root service executes the fixed experiments and saves
+epoch/iteration histories, intermediate diagnostics, checkpoints and predictions.
+Model selections are frozen using validation data before the common test stage.
+The [runbook](task3-runbook.md) documents status and recovery; the
+[launch record](results/task3_launch.json) records configuration and source hashes.
+No performance result is claimed here until the run completes.
+
+Preparation identified four valid zero-gate input-to-register paths whose
+gate-output fanout/capacitance sample sets are empty. These receive an explicit
+empty-set indicator and zero placeholders in the modeling inputs, identically
+across conditions; other missing values remain errors. Task 2 tables, labels and
+eligibility remain unchanged. After train-constant removal there are 228 tree
+inputs and 33 inputs per path for the shared representation-conditioned MLP.
 
 ## Task 4: Reflections — ongoing
 

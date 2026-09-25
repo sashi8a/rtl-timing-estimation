@@ -1,0 +1,40 @@
+{
+  "run_id": "task3-20260925-v1",
+  "recorded_at_utc": "2026-09-25T05:09:05.555489+00:00",
+  "state": "service_started",
+  "service": "rtl-task3.service",
+  "server": "sashi@89.169.111.107",
+  "server_run_directory": "/home/sashi/rtl-timing-estimation/runs/task3-20260925-v1",
+  "release_sha256": "cf860796313ba4863edd3e9b0fd6ab6f95e1eb3e43d89feeae7a0c3ee62398ab",
+  "counts": {
+    "train": 716,
+    "validation": 337,
+    "test": 251
+  },
+  "tree_inputs": 228,
+  "neural_inputs": 33,
+  "learned_runs": 11,
+  "neural_epochs_per_run": 200,
+  "tests": {
+    "task2_passed": 20,
+    "modeling_passed": 15,
+    "task2_design_revalidation_passed": 19,
+    "lint": "passed"
+  },
+  "linger": true,
+  "task2_base_commit": "de3654a5d40da9d5b0999a3d0791002aea1d6875",
+  "source_sha256": {
+    "modeling/common.py": "74ba6a45d54368c71d1b96536c983aec5fdb3428e212cbb3e92733be81b4f21f",
+    "modeling/curves.py": "4a4cb0eba9f39a6b97bd35f3460a96dbd14fb2ec739331794ca1515ca628d191",
+    "modeling/data.py": "591d0b9b68ef08cbf586e6b3cf7b95f01d224445c30a0b4f27d677fab43f2174",
+    "modeling/finish.py": "b05d69bb12342ca6a36f5460c98367d3607df7f2d599116c60c9fb34cd85c930",
+    "modeling/metrics.py": "fed84eced006a43baa63739a344d7ee952421f7c6cedab632407058d1dadb849",
+    "modeling/neural.py": "8363552011c009000b9f717e3fa1397ff8baa87a35f47e801484d85b575bbb68",
+    "modeling/run.py": "8145ee5abfc940a8e7dd1e9804336418589efe8b1d7e8f739af83bea06e0f1d8",
+    "modeling/status.py": "2ad73567e6b05638f86ffb423dc5735b4fc48942de6da58399501c08a91797c0",
+    "modeling/train.py": "4b817ee81d088ba320d5fdc185b71b7f92dd8c3bc1466daba2189dc1f15c65b7",
+    "modeling/validate_task2.py": "43b6e503a647f00d574bd04e9d71c4d6f72431ce258f6eaf00043df6721162e0"
+  },
+  "config_sha256": "1e8f044a9b7903c6c319371e28c09672554645a6ad2cee55d4f3942527ca4259",
+  "lock_sha256": "adabe9ae98c2955dd39dd509e9489a42e373facb711a2ea675f6a9eac3660686"
+}

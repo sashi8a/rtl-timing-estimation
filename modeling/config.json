@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "release_sha256": "cf860796313ba4863edd3e9b0fd6ab6f95e1eb3e43d89feeae7a0c3ee62398ab",
+  "split": {
+    "train": ["chameleon_peripherals", "crc32", "opencores_ethernet", "opencores_jpeg", "orfs_gcd", "pwm256"],
+    "validation": ["cic5", "spi"],
+    "test": ["opencores_aes", "uart"]
+  },
+  "representations": ["sog", "aig", "aimg", "xag"],
+  "seeds": [11, 22, 33],
+  "tree": {
+    "loss": "absolute_error", "max_iter": 200, "learning_rate": 0.05,
+    "max_leaf_nodes": 15, "min_samples_leaf": 10, "l2_regularization": 1.0,
+    "random_state": 0, "early_stopping": false, "categorical_features": null
+  },
+  "neural": {
+    "hidden": [64, 32], "epochs": 200, "batch_size": 32,
+    "learning_rate": 0.001, "weight_decay": 0.0001, "gradient_clip": 1.0,
+    "smooth_epochs": 150, "temperature_start": 0.1, "temperature_end": 0.005,
+    "candidate_epochs": [170, 180, 190, 200]
+  },
+  "test_policy": "Freeze all validation-selected checkpoints, then evaluate once; no tuning or refitting after test."
+}
