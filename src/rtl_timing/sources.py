@@ -21,6 +21,8 @@ def fetch(root: Path, design_id: str) -> dict:
     source_paths = design["source_files"] + design.get("notice_files", [])
     if "generated_constraints" not in design:
         source_paths += [design["sdc"], "LICENSE_BUILD_RUN_SCRIPTS"]
+    elif "original_sdc" in design:
+        source_paths += [design["original_sdc"], "LICENSE_BUILD_RUN_SCRIPTS"]
     downloads = [
         (
             f"https://raw.githubusercontent.com/{repository}/{design['source_revision']}/{p}",

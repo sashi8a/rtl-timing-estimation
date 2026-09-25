@@ -21,7 +21,7 @@ RTL feeds two branches: a BOG branch produces model features, while a synthesize
 
 ## Decisions still open
 
-Task 1 feature definitions, BOG libraries, collection constraints, and design sources are recorded in the feature contract and manifests. Arrival-time regression is the agreed objective. Still open: Task 2 target timing stage and mapping checks; Task 3 baseline/model choice, family split membership, and metrics.
+Task 1 feature definitions, BOG libraries, collection constraints, and design sources are recorded in the feature contract and manifests. Arrival-time regression is the agreed objective. The Task 2 pilot now fixes the target as maximum D-pin data arrival after broader-library synthesis, under matching constraints and without extracted wire parasitics. Still open: resolving quarantined BOG proofs and the full labeling rollout; Task 3 baseline/model choice, family split membership, and metrics.
 
 ## Verification principles
 

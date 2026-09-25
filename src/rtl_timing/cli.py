@@ -13,6 +13,8 @@ def main():
     sub = parser.add_subparsers(dest="command", required=True)
     p = sub.add_parser("fetch")
     p.add_argument("design")
+    p = sub.add_parser("generate-labels")
+    p.add_argument("design")
     p = sub.add_parser("generate")
     p.add_argument("design")
     p.add_argument(
@@ -26,6 +28,10 @@ def main():
     args = parser.parse_args()
     if args.command == "fetch":
         result = fetch(args.root, args.design)
+    elif args.command == "generate-labels":
+        from .labels import generate_labels
+
+        result = generate_labels(args.root, args.design)
     elif args.command == "verify-equivalence":
         from .eda import verify_equivalence
 

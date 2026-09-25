@@ -27,5 +27,9 @@
   "unproven_runs": 36,
   "proofs_not_run": 0,
   "prediction_target": "arrival_time",
-  "target_labels_generated": false
+  "target_labels_generated": true,
+  "label_designs_available": [
+    "gcd",
+    "timer32"
+  ]
 }

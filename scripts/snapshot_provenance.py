@@ -20,6 +20,13 @@ patterns = [
     "data/processed/*/*/*.ys",
     "data/processed/*/*/*.tcl",
     "data/processed/*/*/bog.v",
+    "data/labels/*/*.parquet",
+    "data/labels/*/*.json",
+    "data/labels/*/*.ys",
+    "data/labels/*/*.tcl",
+    "data/labels/*/*.v",
+    "data/labels/*/*.lib",
+    "data/labels/*/*.rpt",
 ]
 paths = sorted(
     {

@@ -25,7 +25,7 @@ Generated endpoint, path, and design tables preserve named columns. Critical pat
 | Combinational operators per representation | 54–6,689 |
 | Cross-representation endpoint identities | Agree for all 19 designs |
 | Formal mapping checks | 40 passed; 36 unproven |
-| Unit tests / lint | 8 passed / clean |
+| Unit tests / lint | 12 passed / clean |
 | Repeated GCD feature extraction | All 12 Parquet tables byte-identical |
 
 These are extraction and consistency results, not prediction-accuracy results. Path rows and the four representations are correlated views, not independent training examples. The full inventory, validation records, and final input/output hashes are in `docs/results/`.
@@ -35,15 +35,26 @@ These are extraction and consistency results, not prediction-accuracy results. P
 - OpenSTA required LEF metadata and rejected signed net declarations in mapped gate netlists. A narrow declaration normalization preserves the raw export; equivalence checks use the normalized netlist.
 - Some equivalence checks remain unproven, particularly for asynchronous-reset designs. Successful extraction does not resolve those proof obligations. The proof itself covers the Yosys pre-mapping elaboration, not the original frontend translation.
 - No placement or extracted wire parasitics are used in Task 1. These are restricted-library BOG features under stated constraints, not signoff timing.
-- GCD keeps its original ORFS constraints; other blocks use a common explicitly recorded experimental SDC. This difference must be preserved or deliberately harmonized when generating labels.
+- GCD originally kept ORFS constraints. It has now been harmonized to the common experimental SDC and all four feature views regenerated before label generation.
 - Random backward walks are not uniform over all paths. The 32-path cap and deduplication are documented local choices.
 - The dataset is small and contains related blocks and small state machines. Register rows are not independent samples for estimating design generalization.
 
 No commercial-tool comparison has been performed. Differences in commercial versus open-source timing accuracy remain hypotheses, not measured conclusions.
 
-## Task 2: Label generation — pending
+## Task 2: Label generation — two-design pilot complete
 
-Choose and document the target circuit's synthesis/timing stage, preserve matching library/corner and constraints, and validate endpoint correspondence with the feature branch. Quantify missing and ambiguous mappings. Do not train on BOG timing as if it were an independent target label.
+The target is maximum rising/falling data arrival at each retained mapped register bit's D pin, in ns. The target circuit is synthesized independently from RTL using a broader Nangate45 gate set at the same corner and SDC as the features. These are post-synthesis labels with no placement or extracted wire parasitics; they are not post-route/signoff accuracy claims.
+
+| Design | Labeled bits | Matches across four views | Target proof | Training-eligible bits |
+| --- | ---: | ---: | --- | ---: |
+| GCD | 34 / 34 | 136 / 136 | Passed | 34 |
+| TIMER32 | 65 / 65 | 260 / 260 | Passed | 0 |
+
+All 99 labels agree with direct pin-arrival queries and reported path-increment sums. Six low/middle/high examples were inspected; [manual observations](task2-pilot-observations.md) explain the source paths and alias identities. Endpoint matching uses unique, one-to-one RTL alias intersections, never timing similarity. Feature/label SDC fingerprints must match. Exact outputs and examples are in `docs/results/task2_pilot.json` and `task2_pilot_review.md`.
+
+TIMER32 and PWM256 SOG diagnostics remain unproven under deeper clock-aware induction, but pass under a synchronous-reset abstraction. This narrows the observed issue without proving unrestricted asynchronous equivalence. TIMER32's broader-library target mapping passes the original check; its restricted BOG checks still block training eligibility. See the diagnostic results and [inclusion policy](task2-label-contract.md).
+
+The conservative feature-proof gate currently admits 10 of 19 designs across 8 families for further consideration; target proofs and coverage are still required. Resolve the 9 quarantined designs or explicitly approve a narrower experimental scope before training. Collection-wide label generation remains pending. A passing Yosys induction check assumes state alignment and is not a reset-reachability or original-RTL frontend proof.
 
 ## Task 3: Training and analysis — pending
 

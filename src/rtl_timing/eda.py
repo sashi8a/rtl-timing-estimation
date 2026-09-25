@@ -163,6 +163,10 @@ check_setup -verbose
         representation=representation,
         duration_seconds=time.monotonic() - started,
         bog_sha256=hashlib.sha256((out / "bog.json").read_bytes()).hexdigest(),
+        sdc_sha256=hashlib.sha256(
+            (root / "data/raw" / design_id / Path(design["sdc"]).name).read_bytes()
+        ).hexdigest(),
+        library_sha256=hashlib.sha256((root / library).read_bytes()).hexdigest(),
     )
     (out / "summary.json").write_text(json.dumps(summary, indent=2) + "\n")
     return summary
@@ -179,13 +183,20 @@ def verify_equivalence(root: Path, design_id: str, representation: str):
         if d["id"] == design_id
     )
     out = root / "data/processed" / design_id / representation
-    relative = out.relative_to(root).as_posix()
     top = design["top"]
+    return verify_mapped_netlist(
+        root, out, top, f"data/libraries/nangate45_{representation}.lib"
+    )
+
+
+def verify_mapped_netlist(root: Path, out: Path, top: str, library: str):
+    """Inductive mapping check; assumes state alignment, not a reset-sequence proof."""
+    relative = out.relative_to(root).as_posix()
     script = f"""read_json {relative}/premap.json
 hierarchy -top {top}
 rename {top} gold
 design -stash reference
-read_liberty data/libraries/nangate45_{representation}.lib
+read_liberty {library}
 read_verilog {relative}/bog.v
 hierarchy -top {top}
 proc
@@ -210,6 +221,7 @@ equiv_status -assert
     result = {
         "status": status,
         "scope": "mapped BOG versus premap elaboration; not original RTL frontend equivalence",
+        "proof_semantics": "inductive equivalence after state alignment; not reset-sequence reachability",
     }
     (out / "equivalence.json").write_text(json.dumps(result, indent=2) + "\n")
     return result

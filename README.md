@@ -6,7 +6,7 @@ Research assessment: predict fine-grained register timing from RTL using open-so
 
 Task 1 feature extraction is implemented for **19 designs across 10 families**, with all four BOG representations (76 runs). DCT was deferred because of synthesis runtime; the exclusion is documented. See [the measured inventory](docs/results/task1_inventory.csv), [validation results](docs/results/task1_validation.json), and [working report](docs/report.md).
 
-No target labels or trained models exist yet. Our prediction objective is arrival-time regression; BOG-derived ranks are input features only. Some mapping-equivalence checks remain unproven and must not be presented as passed.
+The two-design Task 2 pilot now has 99 register-bit labels and complete matches to all four BOG views. GCD is training-eligible under the documented proof gate; TIMER32 remains excluded because its BOG mapping proofs are unresolved. No models have been trained. Our prediction objective is arrival-time regression; BOG-derived ranks are input features only. Some mapping-equivalence checks remain unproven and must not be presented as passed.
 
 ## Objectives
 
@@ -49,3 +49,5 @@ See [Task 1 runbook](docs/task1-runbook.md) for the pinned container, uv environ
 - [OpenROAD Flow Scripts](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts)
 
 The synthesis sequence and feature aggregation adapt upstream code; see [attribution](docs/attribution.md). Reference assets are fetched at pinned revisions with original notices retained.
+
+See [the label contract](docs/task2-label-contract.md), [Task 2 runbook](docs/task2-runbook.md), and [six inspected pilot examples](docs/results/task2_pilot_review.md).

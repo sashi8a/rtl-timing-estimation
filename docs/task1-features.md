@@ -40,9 +40,9 @@ For critical paths, a single-clock flow with uniform launch reference is assumed
 
 A null alias or absent timed path is explicit. No timing labels are read by this pipeline. Target labels will be joined separately in Task 2.
 
-## Pilot constraints
+## Collection constraints
 
-GCD uses its pinned ORFS SDC unchanged: 0.25 ns clock period, 0.07 ns clock latency, input/output delay 20% of the period, and a virtual I/O clock. This is a reproduction starting point, not a clock-closure claim. Timing includes primary-input paths and the SDC's reset handling; reset is not silently forced inactive.
+GCD originally used its pinned ORFS SDC. Before the Task 2 pilot it was harmonized to the common conditions used by other designs: 10 ns clock, zero clock latency, 0.1 ns input/output delay, 0.01 ns input slew, and 1 fF output load. All four GCD feature sets were regenerated; original outputs are archived. Timing includes primary-input paths; reset is not silently forced inactive.
 
 Restricted upstream Nangate45 libraries specify typical process, 25 C, 1.1 V, 1 ns and 1 fF units. No placement or extracted wire parasitics are used. OpenROAD requires Nangate45 LEF metadata to initialize its database; this does not imply placement or physical wire-delay estimation.
 

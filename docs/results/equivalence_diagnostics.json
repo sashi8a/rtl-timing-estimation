@@ -1,0 +1,76 @@
+{
+  "scope": "Two representative SOG mappings, not a diagnosis of all unproven runs",
+  "sync_assumption": "async2sync assumes clock-synchronized asynchronous signals and negative hold time; not full asynchronous equivalence",
+  "results": [
+    {
+      "design": "timer32",
+      "representation": "sog",
+      "variant": "preclock",
+      "status": "unproven",
+      "unproven_signals": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$5576: \\TMR_gold [0] \\TMR[0]$_DFFE_PP0P_.IQ_gate",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$5543: \\clkdiv_gold [0] \\clkdiv[0]$_DFFE_PP0P_.IQ_gate"
+      ],
+      "script_sha256": "61e673cf8f81619ad836315650f3e0cb2993ff744ce0b352d75454ba20fa1a5a",
+      "log_sha256": "5e2bbe2e4b6e18888b32be7fc6a2fa6cb1ba16fb044d289ec2952b73370ad640",
+      "changes_training_eligibility": false
+    },
+    {
+      "design": "timer32",
+      "representation": "sog",
+      "variant": "deeper",
+      "status": "unproven",
+      "unproven_signals": [
+        "  Unproven $equiv $auto$equiv_make.cc:258:find_same_wires$2164: \\TMR_gold [0] \\TMR[0]$_DFFE_PP0P_.IQ_gate",
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$2131: \\clkdiv_gold [0] \\clkdiv[0]$_DFFE_PP0P_.IQ_gate"
+      ],
+      "script_sha256": "6ed079a1d599818a86ba6345c6add7ac598355a4361e30b5e20a220a49779f69",
+      "log_sha256": "544992be9664b07a23fd556ff21606cfc31c85be3c90b03060a03f5cd1c88929",
+      "changes_training_eligibility": false
+    },
+    {
+      "design": "timer32",
+      "representation": "sog",
+      "variant": "sync_assumption",
+      "status": "passed_under_sync_assumption",
+      "unproven_signals": [],
+      "script_sha256": "7a9cc813cd4bcbe9bca3ee488387c2026c141bd4a90b473655d43923a7ce792a",
+      "log_sha256": "7df2019cdfa8ef40517b8175b580bee2b3fc01edf8df489366f73609bc9b641e",
+      "changes_training_eligibility": false
+    },
+    {
+      "design": "pwm256",
+      "representation": "sog",
+      "variant": "preclock",
+      "status": "unproven",
+      "unproven_signals": [
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$941: \\counter_gold [0] \\counter[0]$_DFF_PN0_.IQ_gate"
+      ],
+      "script_sha256": "b12effed211f5e444ead0d9a1e2c8223d3a64f482679fbe8d8b78b998638051e",
+      "log_sha256": "bbe984058ddad67ebe05ea301ded3acad8bc9936dfa22c39303172822d28ae66",
+      "changes_training_eligibility": false
+    },
+    {
+      "design": "pwm256",
+      "representation": "sog",
+      "variant": "deeper",
+      "status": "unproven",
+      "unproven_signals": [
+        "  Unproven $equiv $auto$equiv_make.cc:295:find_same_wires$457: \\counter_gold [0] \\counter[0]$_DFF_PN0_.IQ_gate"
+      ],
+      "script_sha256": "50157c7694d1f40ee39b2964275d072f78bf91851e03f71c1d9e8a83462efcc3",
+      "log_sha256": "d8730061c67d504e5869d4a35aae5cb7fcd06ee84cdd85778cce0f18f231a2b0",
+      "changes_training_eligibility": false
+    },
+    {
+      "design": "pwm256",
+      "representation": "sog",
+      "variant": "sync_assumption",
+      "status": "passed_under_sync_assumption",
+      "unproven_signals": [],
+      "script_sha256": "098215e3d42d44d62ada23dc2b09b5da3c44a78e61f8fc6452ecdbd41e840287",
+      "log_sha256": "4fe3361d24dc9da42450bc1cfa79350e6445afb017cb04d94da6c81a232fb066",
+      "changes_training_eligibility": false
+    }
+  ]
+}

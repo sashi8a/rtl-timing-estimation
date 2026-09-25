@@ -13,9 +13,18 @@
       "top": "gcd",
       "clock": "clk",
       "reset": "reset",
-      "sdc": "flow/designs/nangate45/gcd/constraint.sdc",
+      "sdc": "generated.sdc",
       "license_status": "retain repository LICENSE; inspect design-specific notices before redistribution",
-      "status": "pilot"
+      "status": "pilot",
+      "original_sdc": "flow/designs/nangate45/gcd/constraint.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      }
     },
     {
       "id": "timer32",

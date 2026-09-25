@@ -91,3 +91,31 @@ Record meaningful decisions as they are made. Unresolved choices are not commitm
 **Observed:** All 76 retained representation runs passed artifact checks; all 5,216 endpoint rows were timed, and canonical endpoint identities agreed across representations for every design. The 19 designs contain 1,304 register bits when counted once each, and yield 84,184 retained path rows. Formal mapping checks passed for 40 runs and remained unproven for 36. All 12 GCD Parquet tables were byte-identical after repeated extraction. Eight unit tests and lint checks passed.
 
 **Boundary:** This completes collection and feature extraction, with recorded proof limitations. No target-circuit labels or trained models exist. Review the walkthrough before planning Task 2.
+
+## 2026-09-25: Target-label definition confirmed against assessment
+
+**Decision:** Use maximum rising/falling data arrival at each retained mapped register bit's D pin, in ns, from an independently synthesized broader-library circuit. Include constrained primary-input and register-origin paths and retain source type. Do not substitute slack or BOG timing as the label.
+
+**Evidence:** The reattached assessment explicitly describes synthesis followed by STA to obtain individual-register arrival times. It does not require placement or routing. The first target therefore uses cell-delay-only post-synthesis timing, with that limitation stated explicitly.
+
+## 2026-09-25: GCD constraint harmonization
+
+**Decision:** Replace the original GCD experiment's clock/latency/I/O conditions with the common collection SDC and regenerate all four views. Preserve the initial artifacts under `data/archive/task1_initial/gcd` on the server and the original configuration in commit `6623f62`.
+
+**Reason:** A clock latency offset and different input conditions would confound comparisons. Feature and label joins now require identical SDC hashes. Both pilot designs were freshly regenerated with these fingerprints; older designs must be refreshed before label joins if their summaries lack them.
+
+## 2026-09-25: Investigating unproven asynchronous mappings
+
+**Observed:** TIMER32 and PWM256 SOG checks still leave their lowest counter bits unproven when clock modeling is moved before matching and when induction is increased to 16 steps with undefined-state modeling. Both pass after `async2sync`. TIMER32's broader-library target mapping passes the original clock-aware check.
+
+**Interpretation:** This is evidence of sensitivity to mapping and clock/reset modeling. It is not a concrete behavioral counterexample and does not justify declaring every unresolved asynchronous design equivalent. `async2sync` assumes synchronized asynchronous signals and negative hold time. The existing induction checker also assumes state alignment; it does not prove reset reachability or original frontend correctness.
+
+**Policy:** Preserve labels for audit, but mark rows training-eligible only after unique one-to-one alias matching, valid timing, matching feature/label constraints, a passing target mapping check, and passing checks for all four BOG mappings. Conditional diagnostics do not override the main statuses. This leaves 10/19 designs across 8 families past the feature-proof gate; target validation remains necessary. Resolve the 9 quarantined designs or explicitly reconsider scope before training.
+
+## 2026-09-25: Two-design label pilot
+
+**Observed:** GCD yields 34/34 labels and TIMER32 65/65, with all 396 feature-view matches unique and complete. All 99 selected arrivals agree with direct OpenSTA pin-arrival queries, and path increments sum to the reported arrivals. Six low/middle/high examples are retained for inspection. Both target mapping checks pass; TIMER32 remains ineligible for training because its BOG checks are unresolved.
+
+**Implementation details that mattered:** The pinned `report_arrival` command does not support `>` redirection like `report_checks`; bracketed log sections are captured instead. Target mapping retains ordinary combinational gates and DFFs and explicitly excludes physical-only, latch, scan, tristate, clock-gating, and multi-output adder cells. Broader gate types are target-circuit metadata, not new BOG features. Twelve unit tests pass.
+
+**Boundary:** This completes the agreed pilot, not collection-wide labeling, commercial-tool validation, or model training.

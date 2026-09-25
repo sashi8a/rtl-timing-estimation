@@ -50,7 +50,7 @@ output = root / "docs/results"
 output.mkdir(parents=True, exist_ok=True)
 fields = list(dict.fromkeys(k for r in rows for k in r))
 with (output / "task1_inventory.csv").open("w") as stream:
-    writer = csv.DictWriter(stream, fieldnames=fields)
+    writer = csv.DictWriter(stream, fieldnames=fields, lineterminator="\n")
     writer.writeheader()
     writer.writerows(rows)
 complete = [
@@ -69,7 +69,10 @@ summary = {
     "unproven_runs": sum(r.get("equivalence") == "unproven" for r in rows),
     "proofs_not_run": sum(r.get("equivalence") == "not_run" for r in rows),
     "prediction_target": "arrival_time",
-    "target_labels_generated": False,
+    "target_labels_generated": any((root / "data/labels").glob("*/summary.json")),
+    "label_designs_available": sorted(
+        p.parent.name for p in (root / "data/labels").glob("*/summary.json")
+    ),
 }
 (output / "task1_summary.json").write_text(json.dumps(summary, indent=2) + "\n")
 print(json.dumps(summary, indent=2))

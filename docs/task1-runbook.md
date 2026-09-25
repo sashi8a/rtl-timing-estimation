@@ -76,11 +76,11 @@ coverage summary, and formal verification status. Generated artifacts are ignore
 by Git. Fetch commands preserve source notices; do not infer a circuit's license
 from ORFS's build-script license.
 
-The GCD pilot preserves its original SDC. Other candidates use the explicit common
+The original GCD pilot is archived; GCD now uses the same explicit common
 constraints in the manifest: 10 ns clock, 0.1 ns input/output delays, 0.01 ns input
 transition, 1 fF output load, no extracted parasitics, no reset case analysis.
 These are controlled experimental conditions, not claimed design specifications.
-Task 2 must preserve the matching conditions when generating target labels.
+The Task 2 pilot checks matching SDC hashes before joining labels.
 
 For an interrupted run with unchanged inputs/configuration, add `--resume-existing`. Completed artifacts are reused. Do not use this option after changing RTL, constraints, libraries, or feature settings. Four workers were used after checking server memory usage.
 
@@ -99,4 +99,4 @@ The hash snapshot identifies final inputs and outputs; it is not a historical ex
 
 ## Current artifact locations
 
-The complete raw reports remain on the compute server under `/home/sashi/rtl-timing-estimation/data/processed/`. The local workspace contains the source files, graphs, feature tables, scripts, and logs; only the GCD pilot's raw reports were transferred locally. Run full reextraction on the server or regenerate reports locally with the pinned container. Compact copies of all designs are packaged on the server in `/home/sashi/task1-artifacts.tar.gz`.
+The complete raw reports remain on the compute server under `/home/sashi/rtl-timing-estimation/data/processed/`. The local workspace contains the source files, graphs, feature tables, scripts, and logs; only the GCD pilot's raw reports were transferred locally. Run full reextraction on the server or regenerate reports locally with the pinned container. The initial compact collection is packaged on the server in `/home/sashi/task1-artifacts.tar.gz`. The newer `/home/sashi/task2-pilot-artifacts.tar.gz` contains the regenerated GCD/TIMER32 feature artifacts and the label pilot; apply it after the initial archive to obtain current pilot data.

@@ -28,7 +28,7 @@ def is_register(cell):
 
 
 class Bog:
-    def __init__(self, module: dict, representation: str):
+    def __init__(self, module: dict, representation: str, allowed_cell_types=None):
         self.module = module
         self.cells = {
             name: cell
@@ -53,9 +53,10 @@ class Bog:
                 for index, bit in enumerate(port["bits"]):
                     self.inputs[bit] = f"{name}[{index}]"
         for name, cell in self.cells.items():
-            if (
-                not is_register(cell)
-                and OPERATORS.get(cell["type"]) not in ALLOWED[representation]
+            if not is_register(cell) and (
+                cell["type"] not in allowed_cell_types
+                if allowed_cell_types is not None
+                else OPERATORS.get(cell["type"]) not in ALLOWED[representation]
             ):
                 raise ValueError(f"Unsupported cell: {name} {cell['type']}")
             for port, direction in cell["port_directions"].items():
