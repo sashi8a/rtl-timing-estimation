@@ -1,10 +1,12 @@
 # RTL Timing Estimation
 
-Research assessment: predict fine-grained register timing from RTL using open-source tools, and evaluate improvements over an adapted RTL-Timer baseline.
+Research assessment: predict fine-grained register timing from RTL using open-source tools, and evaluate model choices on held-out design families.
 
 ## Status
 
-Repository scaffold only. Data generation, feature extraction, models, and evaluation are not implemented yet. Toolchain, dependencies, timing target, and experimental protocol will be chosen after reviewing the paper and reference implementation.
+Task 1 feature extraction is implemented for **19 designs across 10 families**, with all four BOG representations (76 runs). DCT was deferred because of synthesis runtime; the exclusion is documented. See [the measured inventory](docs/results/task1_inventory.csv), [validation results](docs/results/task1_validation.json), and [working report](docs/report.md).
+
+No target labels or trained models exist yet. Our prediction objective is arrival-time regression; BOG-derived ranks are input features only. Some mapping-equivalence checks remain unproven and must not be presented as passed.
 
 ## Objectives
 
@@ -38,7 +40,7 @@ Generated datasets, model artifacts, and run outputs are excluded from Git by de
 
 ## Reproduction
 
-No executable pipeline exists yet. Setup instructions, pinned dependencies, and exact commands will be added alongside each implemented stage and verified before being documented as working.
+See [Task 1 runbook](docs/task1-runbook.md) for the pinned container, uv environment, generation commands, and verification. See [feature correspondence and deviations](docs/task1-features.md) for exact definitions. Start with [the GCD walkthrough](notebooks/01_gcd_walkthrough.ipynb).
 
 ## References
 
@@ -46,4 +48,4 @@ No executable pipeline exists yet. Setup instructions, pinned dependencies, and 
 - [RTL-Timer reference implementation](https://github.com/hkust-zhiyao/RTL-Timer)
 - [OpenROAD Flow Scripts](https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts)
 
-Upstream code has not been imported. Any reused code will retain its attribution and applicable license notices.
+The synthesis sequence and feature aggregation adapt upstream code; see [attribution](docs/attribution.md). Reference assets are fetched at pinned revisions with original notices retained.

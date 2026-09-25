@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "upstream_revision": "206ff4078368c251d2fafaffcc648282c68316f1",
+  "orfs_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+  "representations": ["sog", "aig", "aimg", "xag"],
+  "seed": 42,
+  "max_random_paths": 32,
+  "target": "arrival_time",
+  "rank_features_source": "bog_arrival_time_only"
+}

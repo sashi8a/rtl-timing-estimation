@@ -1,0 +1,14 @@
+{
+  "candidate_count": 25,
+  "excluded": {
+    "gpio": "No sequential always block in inspected source",
+    "zigzag": "RAM-based stage deferred for first collection",
+    "div_uu": "Used as dependency of div_su, not counted twice",
+    "eth_rxstatem": "Small related state machine; retained other Ethernet functions",
+    "sddac": "Analog include dependency; deferred",
+    "dct_mac": "ABC synthesis remained CPU-bound after more than seven minutes; interrupted under collection time budget; no claim of functional failure."
+  },
+  "selection_basis": "functional diversity and static compatibility, before labels or model results",
+  "initially_selected_for_execution": 20,
+  "retained_designs": 19
+}

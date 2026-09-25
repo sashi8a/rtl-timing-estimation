@@ -1,0 +1,610 @@
+[
+  {
+    "design": "gcd",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 34,
+    "timed_endpoints": 34,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "gcd",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 34,
+    "timed_endpoints": 34,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "gcd",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 34,
+    "timed_endpoints": 34,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "gcd",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 34,
+    "timed_endpoints": 34,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "timer32",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 65,
+    "timed_endpoints": 65,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "timer32",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 65,
+    "timed_endpoints": 65,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "timer32",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 65,
+    "timed_endpoints": 65,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "timer32",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 65,
+    "timed_endpoints": 65,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "pwm32",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 65,
+    "timed_endpoints": 65,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "pwm32",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 65,
+    "timed_endpoints": 65,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "pwm32",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 65,
+    "timed_endpoints": 65,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "pwm32",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 65,
+    "timed_endpoints": 65,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "wdt32",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 34,
+    "timed_endpoints": 34,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "wdt32",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 34,
+    "timed_endpoints": 34,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "wdt32",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 34,
+    "timed_endpoints": 34,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "wdt32",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 34,
+    "timed_endpoints": 34,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_crc",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 32,
+    "timed_endpoints": 32,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_crc",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 32,
+    "timed_endpoints": 32,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_crc",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 32,
+    "timed_endpoints": 32,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_crc",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 32,
+    "timed_endpoints": 32,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_random",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 20,
+    "timed_endpoints": 20,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_random",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 20,
+    "timed_endpoints": 20,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_random",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 20,
+    "timed_endpoints": 20,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_random",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 20,
+    "timed_endpoints": 20,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_txstatem",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 12,
+    "timed_endpoints": 12,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_txstatem",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 12,
+    "timed_endpoints": 12,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_txstatem",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 12,
+    "timed_endpoints": 12,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_txstatem",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 12,
+    "timed_endpoints": 12,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_txcounters",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 35,
+    "timed_endpoints": 35,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_txcounters",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 35,
+    "timed_endpoints": 35,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_txcounters",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 35,
+    "timed_endpoints": 35,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_txcounters",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 35,
+    "timed_endpoints": 35,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_rxcounters",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 25,
+    "timed_endpoints": 25,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_rxcounters",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 25,
+    "timed_endpoints": 25,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_rxcounters",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 25,
+    "timed_endpoints": 25,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_rxcounters",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 25,
+    "timed_endpoints": 25,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_rxaddrcheck",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 4,
+    "timed_endpoints": 4,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_rxaddrcheck",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 4,
+    "timed_endpoints": 4,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_rxaddrcheck",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 4,
+    "timed_endpoints": 4,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "eth_rxaddrcheck",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 4,
+    "timed_endpoints": 4,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "div_su",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 272,
+    "timed_endpoints": 272,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "div_su",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 272,
+    "timed_endpoints": 272,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "div_su",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 272,
+    "timed_endpoints": 272,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "div_su",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 272,
+    "timed_endpoints": 272,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "jpeg_rle1",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 32,
+    "timed_endpoints": 32,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "jpeg_rle1",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 32,
+    "timed_endpoints": 32,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "jpeg_rle1",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 32,
+    "timed_endpoints": 32,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "jpeg_rle1",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 32,
+    "timed_endpoints": 32,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "jpeg_rzs",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 45,
+    "timed_endpoints": 45,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "jpeg_rzs",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 45,
+    "timed_endpoints": 45,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "jpeg_rzs",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 45,
+    "timed_endpoints": 45,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "jpeg_rzs",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 45,
+    "timed_endpoints": 45,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "uart",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 79,
+    "timed_endpoints": 79,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "uart",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 79,
+    "timed_endpoints": 79,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "uart",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 79,
+    "timed_endpoints": 79,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "uart",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 79,
+    "timed_endpoints": 79,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "spi",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 25,
+    "timed_endpoints": 25,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "spi",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 25,
+    "timed_endpoints": 25,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "spi",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 25,
+    "timed_endpoints": 25,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "spi",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 25,
+    "timed_endpoints": 25,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "aes_key_expand",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 172,
+    "timed_endpoints": 172,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "aes_key_expand",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 172,
+    "timed_endpoints": 172,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "aes_key_expand",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 172,
+    "timed_endpoints": 172,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "aes_key_expand",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 172,
+    "timed_endpoints": 172,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "pwm256",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 9,
+    "timed_endpoints": 9,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "pwm256",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 9,
+    "timed_endpoints": 9,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "pwm256",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 9,
+    "timed_endpoints": 9,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "pwm256",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 9,
+    "timed_endpoints": 9,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "crc32",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 32,
+    "timed_endpoints": 32,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "crc32",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 32,
+    "timed_endpoints": 32,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "crc32",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 32,
+    "timed_endpoints": 32,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "crc32",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 32,
+    "timed_endpoints": 32,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "cic5",
+    "representation": "sog",
+    "status": "passed",
+    "endpoint_rows": 312,
+    "timed_endpoints": 312,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "cic5",
+    "representation": "aig",
+    "status": "passed",
+    "endpoint_rows": 312,
+    "timed_endpoints": 312,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "cic5",
+    "representation": "aimg",
+    "status": "passed",
+    "endpoint_rows": 312,
+    "timed_endpoints": 312,
+    "same_endpoint_ids_across_representations": true
+  },
+  {
+    "design": "cic5",
+    "representation": "xag",
+    "status": "passed",
+    "endpoint_rows": 312,
+    "timed_endpoints": 312,
+    "same_endpoint_ids_across_representations": true
+  }
+]

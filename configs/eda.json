@@ -1,0 +1,6 @@
+{
+  "image": "openroad/orfs@sha256:7f9c688e71cd49379b9e9a45a4558724e3eda501eaaaf11bc9b77382a3fe647b",
+  "docker_prefix": ["sudo", "-n", "docker"],
+  "environment_script": "/OpenROAD-flow-scripts/env.sh",
+  "timing_engine": "OpenSTA embedded in OpenROAD"
+}

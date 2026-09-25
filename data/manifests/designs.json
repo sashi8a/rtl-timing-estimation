@@ -1,0 +1,555 @@
+{
+  "schema_version": 1,
+  "designs": [
+    {
+      "id": "gcd",
+      "family": "orfs_gcd",
+      "category": "arithmetic_control",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/gcd/gcd.v"
+      ],
+      "top": "gcd",
+      "clock": "clk",
+      "reset": "reset",
+      "sdc": "flow/designs/nangate45/gcd/constraint.sdc",
+      "license_status": "retain repository LICENSE; inspect design-specific notices before redistribution",
+      "status": "pilot"
+    },
+    {
+      "id": "timer32",
+      "family": "chameleon_peripherals",
+      "category": "control",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/chameleon/IPs/TIMER32.v"
+      ],
+      "notice_files": [],
+      "top": "TIMER32",
+      "clock": "clk",
+      "reset": "rst",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "asynchronous",
+      "reset_polarity": "active_high"
+    },
+    {
+      "id": "pwm32",
+      "family": "chameleon_peripherals",
+      "category": "control",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/chameleon/IPs/PWM32.v"
+      ],
+      "notice_files": [],
+      "top": "PWM32",
+      "clock": "clk",
+      "reset": "rst",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "asynchronous",
+      "reset_polarity": "active_high"
+    },
+    {
+      "id": "wdt32",
+      "family": "chameleon_peripherals",
+      "category": "control",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/chameleon/IPs/WDT32.v"
+      ],
+      "notice_files": [],
+      "top": "WDT32",
+      "clock": "clk",
+      "reset": "rst",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "asynchronous",
+      "reset_polarity": "active_high"
+    },
+    {
+      "id": "eth_crc",
+      "family": "opencores_ethernet",
+      "category": "communication",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/ethmac/eth_crc.v",
+        "flow/designs/src/ethmac/timescale.v"
+      ],
+      "notice_files": [
+        "flow/designs/src/ethmac/LICENSE"
+      ],
+      "top": "eth_crc",
+      "clock": "Clk",
+      "reset": "Reset",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "asynchronous",
+      "reset_polarity": "active_high"
+    },
+    {
+      "id": "eth_random",
+      "family": "opencores_ethernet",
+      "category": "communication",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/ethmac/eth_random.v",
+        "flow/designs/src/ethmac/timescale.v"
+      ],
+      "notice_files": [
+        "flow/designs/src/ethmac/LICENSE"
+      ],
+      "top": "eth_random",
+      "clock": "MTxClk",
+      "reset": "Reset",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "asynchronous",
+      "reset_polarity": "active_high"
+    },
+    {
+      "id": "eth_txstatem",
+      "family": "opencores_ethernet",
+      "category": "communication",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/ethmac/eth_txstatem.v",
+        "flow/designs/src/ethmac/timescale.v"
+      ],
+      "notice_files": [
+        "flow/designs/src/ethmac/LICENSE"
+      ],
+      "top": "eth_txstatem",
+      "clock": "MTxClk",
+      "reset": "Reset",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "asynchronous",
+      "reset_polarity": "active_high"
+    },
+    {
+      "id": "eth_txcounters",
+      "family": "opencores_ethernet",
+      "category": "communication",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/ethmac/eth_txcounters.v",
+        "flow/designs/src/ethmac/timescale.v"
+      ],
+      "notice_files": [
+        "flow/designs/src/ethmac/LICENSE"
+      ],
+      "top": "eth_txcounters",
+      "clock": "MTxClk",
+      "reset": "Reset",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "asynchronous",
+      "reset_polarity": "active_high"
+    },
+    {
+      "id": "eth_rxcounters",
+      "family": "opencores_ethernet",
+      "category": "communication",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/ethmac/eth_rxcounters.v",
+        "flow/designs/src/ethmac/timescale.v"
+      ],
+      "notice_files": [
+        "flow/designs/src/ethmac/LICENSE"
+      ],
+      "top": "eth_rxcounters",
+      "clock": "MRxClk",
+      "reset": "Reset",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "asynchronous",
+      "reset_polarity": "active_high"
+    },
+    {
+      "id": "eth_rxaddrcheck",
+      "family": "opencores_ethernet",
+      "category": "communication",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/ethmac/eth_rxaddrcheck.v",
+        "flow/designs/src/ethmac/timescale.v"
+      ],
+      "notice_files": [
+        "flow/designs/src/ethmac/LICENSE"
+      ],
+      "top": "eth_rxaddrcheck",
+      "clock": "MRxClk",
+      "reset": "Reset",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "asynchronous",
+      "reset_polarity": "active_high"
+    },
+    {
+      "id": "div_su",
+      "family": "opencores_jpeg",
+      "category": "signal_processing",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/jpeg/div_su.v",
+        "flow/designs/src/jpeg/div_uu.v"
+      ],
+      "notice_files": [
+        "flow/designs/src/jpeg/LICENSE"
+      ],
+      "top": "div_su",
+      "clock": "clk",
+      "reset": null,
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate"
+    },
+    {
+      "id": "jpeg_rle1",
+      "family": "opencores_jpeg",
+      "category": "signal_processing",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/jpeg/jpeg_rle1.v"
+      ],
+      "notice_files": [
+        "flow/designs/src/jpeg/LICENSE"
+      ],
+      "top": "jpeg_rle1",
+      "clock": "clk",
+      "reset": "rst",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "asynchronous",
+      "reset_polarity": "active_low"
+    },
+    {
+      "id": "jpeg_rzs",
+      "family": "opencores_jpeg",
+      "category": "signal_processing",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/jpeg/jpeg_rzs.v"
+      ],
+      "notice_files": [
+        "flow/designs/src/jpeg/LICENSE"
+      ],
+      "top": "jpeg_rzs",
+      "clock": "clk",
+      "reset": "rst",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "asynchronous",
+      "reset_polarity": "active_low"
+    },
+    {
+      "id": "uart",
+      "family": "uart",
+      "category": "communication",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/uart/uart.v",
+        "flow/designs/src/uart/uart_rx.v",
+        "flow/designs/src/uart/uart_tx.v"
+      ],
+      "notice_files": [
+        "flow/designs/src/uart/LICENSE"
+      ],
+      "top": "uart",
+      "clock": "clk",
+      "reset": "rst",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "synchronous",
+      "reset_polarity": "active_high"
+    },
+    {
+      "id": "spi",
+      "family": "spi",
+      "category": "communication",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/spi/spi.v"
+      ],
+      "notice_files": [],
+      "top": "spi",
+      "clock": "clk",
+      "reset": "rst",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "synchronous",
+      "reset_polarity": "active_high"
+    },
+    {
+      "id": "aes_key_expand",
+      "family": "opencores_aes",
+      "category": "cryptography",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/aes/aes_key_expand_128.v",
+        "flow/designs/src/aes/aes_sbox.v",
+        "flow/designs/src/aes/aes_rcon.v",
+        "flow/designs/src/aes/timescale.v"
+      ],
+      "notice_files": [
+        "flow/designs/src/aes/LICENSE"
+      ],
+      "top": "aes_key_expand_128",
+      "clock": "clk",
+      "reset": null,
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate"
+    },
+    {
+      "id": "pwm256",
+      "family": "pwm256",
+      "category": "control",
+      "source_repository": "https://github.com/YosysHQ/yosys-bench",
+      "source_revision": "52ff6fa991f2ab509618d8aaad02f307aac78848",
+      "source_files": [
+        "verilog/benchmarks_small/various/pwm256.v"
+      ],
+      "notice_files": [],
+      "top": "pwm256",
+      "clock": "clk",
+      "reset": "rst_n",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "asynchronous",
+      "reset_polarity": "active_low"
+    },
+    {
+      "id": "crc32",
+      "family": "crc32",
+      "category": "communication",
+      "source_repository": "https://github.com/YosysHQ/yosys-bench",
+      "source_revision": "52ff6fa991f2ab509618d8aaad02f307aac78848",
+      "source_files": [
+        "verilog/benchmarks_small/various/crc32.v"
+      ],
+      "notice_files": [],
+      "top": "crc32",
+      "clock": "clk",
+      "reset": "rst_n",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "synchronous",
+      "reset_polarity": "active_low"
+    },
+    {
+      "id": "cic5",
+      "family": "cic5",
+      "category": "signal_processing",
+      "source_repository": "https://github.com/YosysHQ/yosys-bench",
+      "source_revision": "52ff6fa991f2ab509618d8aaad02f307aac78848",
+      "source_files": [
+        "verilog/benchmarks_small/cic/cic5.v"
+      ],
+      "notice_files": [],
+      "top": "cic5",
+      "clock": "clk",
+      "reset": "rst_n",
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "candidate",
+      "reset_kind": "synchronous",
+      "reset_polarity": "active_low"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 ## Assessment objective
 
-Estimate timing for individual RTL registers. Build a dataset of approximately 20 diverse designs, generate labels with open-source tools, evaluate models on held-out designs, and investigate an improvement over a reference baseline.
+Estimate timing for individual RTL registers. Build a dataset of approximately 20 diverse designs, generate labels with open-source tools, evaluate models on held-out designs, and investigate modeling choices with a simple baseline where useful. Reproducing the full RTL-Timer model is not a prerequisite.
 
 ## Initial vocabulary
 
@@ -21,7 +21,7 @@ RTL feeds two branches: a BOG branch produces model features, while a synthesize
 
 ## Decisions still open
 
-Timing stage and target definition; cell library and corner; timing constraints; design selection; endpoint matching; feature contract; baseline and proposed improvement; split protocol; metrics.
+Task 1 feature definitions, BOG libraries, collection constraints, and design sources are recorded in the feature contract and manifests. Arrival-time regression is the agreed objective. Still open: Task 2 target timing stage and mapping checks; Task 3 baseline/model choice, family split membership, and metrics.
 
 ## Verification principles
 

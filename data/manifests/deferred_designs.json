@@ -1,0 +1,33 @@
+{
+  "designs": [
+    {
+      "id": "dct_mac",
+      "family": "opencores_jpeg",
+      "category": "signal_processing",
+      "source_repository": "https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts",
+      "source_revision": "e2e6b166c9289d5f52dac48fa353a09a6f7644ae",
+      "source_files": [
+        "flow/designs/src/jpeg/dct_mac.v"
+      ],
+      "notice_files": [
+        "flow/designs/src/jpeg/LICENSE"
+      ],
+      "top": "dct_mac",
+      "clock": "clk",
+      "reset": null,
+      "sdc": "generated.sdc",
+      "generated_constraints": {
+        "period_ns": 10.0,
+        "input_delay_ns": 0.1,
+        "input_transition_ns": 0.01,
+        "output_delay_ns": 0.1,
+        "output_load_ff": 1.0,
+        "reset_policy": "not case-analyzed; included as an input; data-pin max timing only"
+      },
+      "parameters": {},
+      "license_status": "retain upstream file notices; see fetched notice_files where present",
+      "status": "deferred",
+      "reason": "ABC synthesis remained CPU-bound after more than seven minutes; interrupted under collection time budget; no claim of functional failure."
+    }
+  ]
+}
