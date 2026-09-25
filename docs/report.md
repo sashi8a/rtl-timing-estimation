@@ -80,7 +80,7 @@ The [inventory](results/task2_collection.json) reports every design and explicit
 
 Superseded upstream outputs are retained under the server's `data/archive/20260925T032645Z-1617b16d/`. The first-pass reset-library data, inventories, and exact code are preserved under `data/archive/20260925T035331Z-d071168e/`; original experiment archives and Git history remain available. No previously unproven artifact was relabeled as passed: new mappings were generated and checked. The conditional `async2sync` diagnostic never substitutes for the required proof.
 
-## Task 3: Training and analysis — unattended run launched
+## Task 3: Training and analysis — initial and follow-up runs complete
 
 The modeling discussion selected a tree weighting comparison and two neural
 comparisons: smooth-max versus hard-max path training, then learned versus equal
@@ -108,7 +108,12 @@ epoch/iteration histories, intermediate diagnostics, checkpoints and predictions
 Model selections are frozen using validation data before the common test stage.
 The [runbook](task3-runbook.md) documents status and recovery; the
 [launch record](results/task3_launch.json) records configuration and source hashes.
-No performance result is claimed here until the run completes.
+The original run completed all 11 learned runs and the common test stage without
+a service restart. Test macro-design MAE was 0.150715 ns for direct SOG,
+0.185438 ns for T0, 0.177099 ns for T1, and 0.160150 ns for N1 averaged across
+its three seeds. The learned models did not establish an aggregate advantage
+over SOG on this two-family test. Smoothing improved all three paired N1 versus
+N0 comparisons; this is distinct from outperforming the SOG reference.
 
 Preparation identified four valid zero-gate input-to-register paths whose
 gate-output fanout/capacitance sample sets are empty. These receive an explicit
@@ -116,6 +121,25 @@ empty-set indicator and zero placeholders in the modeling inputs, identically
 across conditions; other missing values remain errors. Task 2 tables, labels and
 eligibility remain unchanged. After train-constant removal there are 228 tree
 inputs and 33 inputs per path for the shared representation-conditioned MLP.
+
+### Exploratory follow-ups
+
+After inspecting those results, the user approved training-only affine SOG
+calibration and SOG-only N1 with the same three seeds, architecture, preprocessing,
+batch ordering and smooth-to-hard schedule. The original split was retained.
+These are exploratory repeated evaluations of an already-inspected test set,
+not fresh untouched-test evidence. Original model and Task 2 artifacts remain
+unchanged. The [follow-up runbook](task3-followup-runbook.md) documents the protocol.
+
+All four follow-up runs and evaluation completed successfully with zero service
+restarts. C0 calibration scored 0.184546 ns macro-design MAE versus direct SOG's
+0.150715 ns. SOG-only N1 averaged 0.176066 ns versus four-view N1's 0.160150 ns:
+two paired seeds worsened and one improved. Neither proposal improved the primary
+aggregate metric. These observations do not prove calibration or single-view
+learning ineffective in general. Full [metrics](results/task3_followup_metrics.json)
+and [execution verification](results/task3_followup_execution.json) are published;
+all checkpoints, predictions and 600 neural curve epochs are saved on the server
+and in a hash-verified local backup.
 
 ## Task 4: Reflections — ongoing
 

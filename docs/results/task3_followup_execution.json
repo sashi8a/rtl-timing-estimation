@@ -1,0 +1,26 @@
+{
+  "run_id": "task3-followup-20260925-v1",
+  "state": "complete",
+  "service": "rtl-task3-followup.service",
+  "signature": "0cd745dcb91454cff21e25cbc11e339987e2c5bbab86684873fa0c8b625a7dac",
+  "source_revision": "cfbf6baa81ee935aa5fc01426c513b3bda4c693c",
+  "checks": {
+    "tests_passed": 43,
+    "lint": "passed",
+    "original_modeling_and_task2_code_unchanged": true,
+    "service_enabled": true,
+    "linger": true,
+    "service_restarts_at_launch": 0,
+    "readable_checkpoint_epoch": 145,
+    "paired_initialization_verified": true
+  },
+  "evaluation": "Exploratory reuse of inspected original test set",
+  "server_run_directory": "/home/sashi/rtl-timing-estimation/runs/task3-followup-20260925-v1",
+  "completed_at_unix": 1790340109.407951,
+  "service_restarts": 0,
+  "service_exit_code": 0,
+  "local_backup_hash_verified": true,
+  "neural_runs": 3,
+  "neural_epochs": 600,
+  "test_prediction_rows": 2259
+}

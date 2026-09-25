@@ -196,3 +196,19 @@ batch-order and pooling functions. Do not modify or rerun the original experimen
 Use separate hashed manifests, outputs and a persistent server service. Save every
 outcome; explicitly label repeated test evaluation exploratory rather than claiming
 a fresh test. No new design collection, label changes, or hyperparameter sweep.
+
+**Follow-up execution and outcome:** All 43 tests passed (20 Task 2, 15 original
+modeling, 8 follow-up), including exact recovery on CPU and GPU. After disconnecting
+and reconnecting, a checkpoint at epoch 145 was readable and matched its original
+N1 initialization. The separate enabled service had logout persistence. Calibration,
+all three 200-epoch neural runs, and automatic evaluation completed with zero
+restarts. Local verification checked all source/reference hashes and result seals,
+2,259 unique model/register test predictions, and 600 saved neural curve epochs.
+
+C0 scored 0.184546 ns macro-design MAE versus SOG's 0.150715 ns. SOG-only N1
+averaged 0.176066 ns versus original four-view N1's 0.160150 ns; two paired seeds
+worsened and one improved. Neither follow-up improved the primary aggregate metric.
+Preserve these negative/mixed observations and their exploratory evaluation status;
+do not tune further against this test set or select a favorable seed. The final
+export emitted a pandas future deprecation warning for nullable-column concatenation;
+coverage, finite scored predictions, unique identities and sealed outputs passed.
